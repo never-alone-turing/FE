@@ -1,19 +1,20 @@
 import React, {useState} from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, Text, StyleSheet, Button, FlatList } from "react-native";
+import { NativeRouter, Switch, Route } from 'react-router-native';
 import ListItem from './ListItem';
 
-const LandingPage = () => {
+const LandingPage = ({history}) => {
   const [titles, chooseTitle] = useState([
-    {title: "Caretaker"},
-    {title: "Care Reciever"}
+    {title: "Caretaker", path: '/caretaker'},
+    {title: "Care Receiver", path: '/carereceiver'}
   ])
   return (
     <>
       <Text style={styles.text}>Welcome</Text>
-      <FlatList
-        data={titles}
-        renderItem={({ item }) => <ListItem item={item}/>} 
-      />
+        <FlatList
+          data={titles}
+          renderItem={({ item }) => <ListItem item={item} history={history}/>} 
+        />
     </>
   );
 }
