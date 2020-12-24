@@ -1,6 +1,10 @@
 import React, {useState} from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import LandingPage from './components/LandingPage';
+import Caretaker from './components/Caretaker';
+import Receiver from './components/Receiver';
+import { NativeRouter, Switch, Route } from 'react-router-native';
+
 // import {v4 as uuidv4} from 'uuid';
 
 const App = () => {
@@ -10,9 +14,15 @@ const App = () => {
   //   {id: 3, name: 'Naomi', checkins: [{id: 3.1, checkinName: 'study', time: '12:00pm', window: "0:15"}, {id: 3.2, checkinName: 'meal prep', time: '6:00pm', window: "0:30"}]}
   // ])
   return (
-    <View style={styles.container}>
-      <LandingPage />
-    </View>
+    <NativeRouter>
+      <View style={styles.container}>
+        <Switch>
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/caretaker" component={Caretaker} />
+          <Route exact path="/carereceiver" component={Receiver} />
+        </Switch>
+      </View>
+    </NativeRouter>
   );
 }
 
