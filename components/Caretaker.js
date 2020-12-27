@@ -2,6 +2,11 @@ import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
 const Caretaker = ({history}) => {
+  const [timers, editTitles] = useState([
+    {name: "Wake-up", time: '7:00', window: '0:15'},
+    {name: "Take meds", time: '12:00', window: '1:00'},
+    {name: "go to sleep", time: '22:00', window: '1:00'}
+  ])
   return (
     <>
       <Text>Caretaker</Text>
