@@ -4,10 +4,15 @@ import Times from './Times';
 
 const Caretaker = ({history}) => {
   const [timers, editTimers] = useState([
-    {name: "Wake-up", time: '7:00', window: '0:15'},
-    {name: "Take meds", time: '12:00', window: '1:00'},
-    {name: "go to sleep", time: '22:00', window: '1:00'}
+    {id: 1, name: "Wake-up", time: '7:00', window: '0:15'},
+    {id: 2, name: "Take meds", time: '12:00', window: '1:00'},
+    {id: 3, name: "go to sleep", time: '22:00', window: '1:00'}
   ])
+  const deleteTimer = (id) => {
+    editTimers(prevTimers => {
+      return prevTimers.filter(timer => timer.id != id)
+    })
+  }
   return (
     <>
       <Text>Caretaker</Text>
@@ -18,7 +23,7 @@ const Caretaker = ({history}) => {
       </TouchableOpacity>
       <FlatList
           data={timers}
-          renderItem={({ item }) => <Times item={item}/>} 
+          renderItem={({ item }) => <Times item={item} deleteTimer={deleteTimer}/>} 
         />
     </>
   );
