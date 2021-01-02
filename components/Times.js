@@ -1,10 +1,10 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
 // import {Dropdown} from 'react-native-dropdown';
 
-const Times = ({item}) => {
+const Times = ({item, deleteTimer}) => {
   const changeView = () => {
-    console.log(styles.listItemTime.display)
+    console.log('id', item.id)
     // if (styles.listItemTime.display === 'none') {
     //   styles.listItemTime = {'display': 'flex'}
     // } else {
@@ -14,9 +14,9 @@ const Times = ({item}) => {
   }
   return (
     <>
-      <TouchableOpacity style={styles.listItem} onPress={() => changeView()}>
+      <TouchableOpacity style={styles.listItem} >
         <View style={styles.listItemView}>
-          <Text style={styles.closeButton}>X</Text>
+          <Button title='X' style={styles.closeButton} onPress={() => deleteTimer(item.id)}/>
           <Text style={styles.listItemName}>Name: {item.name}</Text>
           <Text style={styles.listItemName}>Time: {item.time}</Text>
           <Text style={styles.listItemName}>Window: {item.window}</Text>
@@ -52,7 +52,8 @@ const styles = StyleSheet.create({
   },
   closeButton: {
     fontSize: 22,
-    color: 'firebrick'
+    color: 'firebrick',
+    backgroundColor: 'black'
   }
 })
 
