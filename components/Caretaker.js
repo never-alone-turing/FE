@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
 import Times from './Times';
+import AddTimer from './AddTimer';
 
 const Caretaker = ({history}) => {
   const [timers, editTimers] = useState([
@@ -21,6 +22,7 @@ const Caretaker = ({history}) => {
           <Text>Back</Text>
         </View>
       </TouchableOpacity>
+      <AddTimer />
       <FlatList
           data={timers}
           renderItem={({ item }) => <Times item={item} deleteTimer={deleteTimer}/>} 
