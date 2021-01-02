@@ -1,8 +1,9 @@
-import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import React, {useState} from "react";
+import { View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
+import Times from './Times';
 
 const Caretaker = ({history}) => {
-  const [timers, editTitles] = useState([
+  const [timers, editTimers] = useState([
     {name: "Wake-up", time: '7:00', window: '0:15'},
     {name: "Take meds", time: '12:00', window: '1:00'},
     {name: "go to sleep", time: '22:00', window: '1:00'}
@@ -15,6 +16,10 @@ const Caretaker = ({history}) => {
           <Text>Back</Text>
         </View>
       </TouchableOpacity>
+      <FlatList
+          data={timers}
+          renderItem={({ item }) => <Times item={item}/>} 
+        />
     </>
   );
 }
