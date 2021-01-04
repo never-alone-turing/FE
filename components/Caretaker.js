@@ -1,9 +1,9 @@
 import React, {useState} from "react";
-import { View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
+import { View, Text, TouchableOpacity, Button, StyleSheet, FlatList } from "react-native";
 import Times from './Times';
 import AddTimer from './AddTimer';
 
-const Caretaker = ({history}) => {
+const Caretaker = ({history, navigation}) => {
   const [timers, editTimers] = useState([
     {id: 1, name: "Wake-up", time: '7:00', window: '0:15'},
     {id: 2, name: "Take meds", time: '12:00', window: '1:00'},
@@ -30,7 +30,7 @@ const Caretaker = ({history}) => {
   return (
     <>
       <Text>Caretaker</Text>
-      <TouchableOpacity style={styles.listItem} onPress={() => history.push('/')}>
+      <TouchableOpacity style={styles.listItem} onPress={() => navigation.navigate('Home')}>
         <View style={styles.listItemView}>
           <Text>Back</Text>
         </View>
@@ -40,7 +40,7 @@ const Caretaker = ({history}) => {
         data={timers}
         renderItem={({ item }) => (
           <Times item={item} deleteTimer={deleteTimer}/>
-        )} 
+        )}
         keyExtractor={(item) => item.id.toString()}
       />
     </>
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   listItem: {
     padding: 15,
     backgroundColor: '#f8f8f8',
-    borderBottomWidth: 1,   
+    borderBottomWidth: 1,
     borderColor: "#eee"
   },
   listItemView: {
