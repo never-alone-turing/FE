@@ -14,6 +14,19 @@ const Caretaker = ({history}) => {
       return prevTimers.filter(timer => timer.id != id)
     })
   }
+
+  const addTimer = (timer) => {
+    console.log('addTimer from Caretaker.js')
+    editTimers(prevTimers => {
+      return [
+        {
+          id: Date.now(),
+          name: timer.name,
+          time: timer.time,
+          window: timer.window
+        }, ...prevTimers]
+    })
+  }
   return (
     <>
       <Text>Caretaker</Text>
@@ -22,11 +35,14 @@ const Caretaker = ({history}) => {
           <Text>Back</Text>
         </View>
       </TouchableOpacity>
-      <AddTimer />
+      <AddTimer addTimer={addTimer}/>
       <FlatList
-          data={timers}
-          renderItem={({ item }) => <Times item={item} deleteTimer={deleteTimer}/>} 
-        />
+        data={timers}
+        renderItem={({ item }) => (
+          <Times item={item} deleteTimer={deleteTimer}/>
+        )} 
+        keyExtractor={(item) => item.id.toString()}
+      />
     </>
   );
 }
