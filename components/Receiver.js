@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
-const Receiver = ({history}) => {
+const Receiver = ({history, navigation}) => {
   return (
     <>
       <Text>Care Receiver</Text>
-      <TouchableOpacity style={styles.listItem} onPress={() => history.push('/')}>
+      <TouchableOpacity style={styles.listItem} onPress={() => navigation.navigate('Home')}>
         <View style={styles.listItemView}>
           <Text>Back</Text>
         </View>
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   listItem: {
     padding: 15,
     backgroundColor: '#f8f8f8',
-    borderBottomWidth: 1,   
+    borderBottomWidth: 1,
     borderColor: "#eee"
   },
   listItemView: {
