@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import Checkin from './Checkin';
 
 const Receiver = ({history, navigation}) => {
   return (
@@ -10,6 +11,7 @@ const Receiver = ({history, navigation}) => {
           <Text>Back</Text>
         </View>
       </TouchableOpacity>
+      <Checkin />
     </>
   );
 }
