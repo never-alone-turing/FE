@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import { View, Text, TouchableOpacity, Button, StyleSheet, FlatList } from "react-native";
+import { Button, Header, BottomSheet } from 'react-native-elements';
+import { View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
 import Times from './Times';
 import AddTimer from './AddTimer';
 
@@ -27,23 +28,33 @@ const Caretaker = ({history, navigation}) => {
         }, ...prevTimers]
     })
   }
+
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
-    <>
-      <Text>Caretaker</Text>
-      <TouchableOpacity style={styles.listItem} onPress={() => navigation.navigate('Home')}>
-        <View style={styles.listItemView}>
-          <Text>Back</Text>
-        </View>
-      </TouchableOpacity>
-      <AddTimer addTimer={addTimer}/>
-      <FlatList
-        data={timers}
-        renderItem={({ item }) => (
-          <Times item={item} deleteTimer={deleteTimer}/>
-        )}
-        keyExtractor={(item) => item.id.toString()}
+    <View>
+      <Header
+   
+        containerStyle={{ backgroundColor: 'black', justifyContent: 'space-between' }}
+        centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: 30, fontWeight: "bold" } }}
+        leftComponent={{ icon: 'home', color: '#fff', size: 40, onPress:() => navigation.navigate('Home')} }
+        rightComponent={{ icon: 'add', color: '#fff', size: 40, onPress:() => setIsVisible(true)} }
       />
-    </>
+
+      <FlatList
+          data={timers}
+          renderItem={({ item }) => (
+            <Times item={item} deleteTimer={deleteTimer}/>
+          )}
+          keyExtractor={(item) => item.id.toString()}
+        />  
+
+      <BottomSheet isVisible={isVisible} containerStyle={{ backgroundColor: "", height: 100 }}>
+        <Button buttonStyle={{ backgroundColor: "black", width: 200, alignSelf: "right" }} title='x' onPress={() => setIsVisible(false)}></Button>
+        <AddTimer addTimer={addTimer}/>
+      </BottomSheet>
+
+    </View>
   );
 }
 
