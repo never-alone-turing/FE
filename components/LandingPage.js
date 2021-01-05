@@ -29,10 +29,9 @@ const LandingPage = ({ navigation }) => {
   return (
     <View>
       <Header
-          placement='left'
           containerStyle={{ backgroundColor: 'black', justifyContent: 'space-around', paddingBottom: 10}}
           centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: 30, fontWeight: "bold" } }}
-          rightComponent={{ icon: 'home', color: '#fff', size: 40, onPress:() => navigation.navigate('Home')} }
+          leftComponent={{ icon: 'home', color: '#fff', size: 40, onPress:() => navigation.navigate('Home')} }
         />
       <Text style={styles.text}>Choose Your Role:</Text>
 
