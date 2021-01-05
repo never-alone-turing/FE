@@ -4,7 +4,7 @@ import Checkin from './Checkin';
 
 const Receiver = ({history, navigation}) => {
   return (
-    <>
+    <View style={styles.careReceiver}>
       <Text>Care Receiver</Text>
       <TouchableOpacity style={styles.listItem} onPress={() => navigation.navigate('Home')}>
         <View style={styles.listItemView}>
@@ -12,11 +12,16 @@ const Receiver = ({history, navigation}) => {
         </View>
       </TouchableOpacity>
       <Checkin />
-    </>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  careReceiver: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   listItem: {
     padding: 15,
     backgroundColor: '#f8f8f8',
