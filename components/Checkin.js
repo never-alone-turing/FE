@@ -5,7 +5,13 @@ class Checkin extends React.Component {
   constructor() {
     super()
     this.state = {
-      currentStyle: styles.mainBtn
+      currentStyle: styles.mainBtn,
+      // dailyTimes will GET fetched, the below code is just filler data for now
+      dailyTimes: [
+        {id: 1, name: "Wake-up", time: '7:00', window: '0:15'},
+        {id: 2, name: "Take meds", time: '12:00', window: '1:00'},
+        {id: 3, name: "go to sleep", time: '22:00', window: '1:00'}
+      ]
     }
   }
 
