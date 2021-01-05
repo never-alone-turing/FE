@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, StyleSheet, TextInput, Button } from "react-native";
+import { View, StyleSheet, TextInput } from "react-native";
+import { Button } from "react-native-elements";
 
 class AddTimer extends React.Component {
   constructor() {
