@@ -16,9 +16,9 @@ import ListItem from './ListItem';
 //           style={styles.accountButton}
 //           data={titles}
 //           keyExtractor={(item) => item.title}
-//           renderItem={({ item }) => 
-//             <ListItem 
-//               item={item} history={history} />} 
+//           renderItem={({ item }) =>
+//             <ListItem
+//               item={item} history={history} />}
 //         />
 //     </>
 //   );
@@ -28,16 +28,20 @@ const LandingPage = ({ navigation }) => {
   return (
     <View>
       <Text style={styles.text}>Never Alone</Text>
-      <Button 
-        title="Caretaker"
+      <TouchableOpacity
+        style={styles.careTakerButton}
         onPress={() => navigation.navigate('Caretaker')}
-      />
-        <Button 
-        title="Receiver"
+      >
+        <Text style={styles.buttonText}>Caretaker</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.receiverButton}
         onPress={() => navigation.navigate('Receiver')}
-      />
+      >
+        <Text style={styles.buttonText}>Receiver</Text>
+      </TouchableOpacity>
     </View>
-    
+
   )
 }
 
@@ -50,14 +54,34 @@ const styles = StyleSheet.create({
    margin: 45
     // backgroundColor: 'green'
   },
-  accountButton: {
+
+  careTakerButton: {
    color: 'black',
+   backgroundColor: 'darkslateblue',
    borderColor: 'black',
+   borderRadius: 50,
    margin: 30,
    padding: 10,
    fontSize: 30
-  }
+ },
 
+ receiverButton: {
+  color: 'black',
+  backgroundColor: 'darkslateblue',
+  borderColor: 'black',
+  borderRadius: 50,
+  margin: 30,
+  padding: 10,
+  fontSize: 30
+ },
+
+ buttonText: {
+   color: 'darkgrey',
+   fontSize: 30,
+   alignSelf: "stretch",
+   textAlign: "center",
+   margin: 45
+ }
 })
 
 export default LandingPage;
