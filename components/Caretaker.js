@@ -3,6 +3,7 @@ import { Button, Header, BottomSheet } from 'react-native-elements';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
 import Times from './Times';
 import AddTimer from './AddTimer';
+import { CardStyleInterpolators } from "react-navigation-stack";
 
 const Caretaker = ({history, navigation}) => {
   const [timers, editTimers] = useState([
@@ -49,8 +50,8 @@ const Caretaker = ({history, navigation}) => {
           keyExtractor={(item) => item.id.toString()}
         />  
 
-      <BottomSheet isVisible={isVisible} containerStyle={{ backgroundColor: "", height: 100 }}>
-        <Button buttonStyle={{ backgroundColor: "black", width: 200, alignSelf: "right" }} title='x' onPress={() => setIsVisible(false)}></Button>
+      <BottomSheet isVisible={isVisible} containerStyle={{}}>
+        <Button buttonStyle={styles.buttonStyle} title='x' titleStyle={styles.titleStyle} onPress={() => setIsVisible(false)}></Button>
         <AddTimer addTimer={addTimer}/>
       </BottomSheet>
 
@@ -70,6 +71,17 @@ const styles = StyleSheet.create({
   },
   listItemText: {
     fontSize: 18
+  },
+  buttonStyle: {
+    backgroundColor: "black", 
+    width: "auto", 
+    alignSelf: "flex-end",
+    textAlign: "center",
+    margin: 20,
+    padding: 10,
+  },
+  titleStyle: {
+    fontSize: 30
   }
 })
 
