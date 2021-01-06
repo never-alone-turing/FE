@@ -10,7 +10,6 @@ class Checkin extends React.Component {
   }
 
   changeDecider = () => {
-    console.log(this.state.currentStyle)
     if (this.state.currentStyle === styles.mainBtn) {
       this.state.currentStyle = styles2.mainBtn
     } else {
