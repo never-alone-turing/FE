@@ -22,7 +22,7 @@ class AddTimer extends React.Component {
         <TextInput placeholder="Name" style={styles.input} onChangeText={text => { this.setState({ name: text }) }}/>
         <TextInput placeholder="Time" style={styles.input} onChangeText={text => { this.setState({ time: text }) }}/>
         <TextInput placeholder="Window" style={styles.input} onChangeText={text => { this.setState({ window: text }) }}/>
-        <Button buttonStyle={{ backgroundColor: "black", width: 200, alignSelf: "center" }} onPress={() => this.props.addTimer(this.state)} title='Add Item'>
+        <Button buttonStyle={styles.buttonStyle} onPress={() => this.props.addTimer(this.state)} title='Add Item' titleStyle={styles.titleStyle}>
         </Button>
       </View>
     );
@@ -35,15 +35,13 @@ const styles = StyleSheet.create({
     padding: 8,
     fontSize: 25
   },
-  btn: {
-    backgroundColor: '#c2bad8',
-    padding: 9,
-    margin: 5
+  buttonStyle: {
+    backgroundColor: "black", 
+    width: 200, 
+    alignSelf: "center"
   },
-  btnText: {
-    color: 'darkslateblue',
-    fontSize: 20,
-    textAlign: 'center'
+  titleStyle: {
+    fontSize: 30
   }
 })
 
