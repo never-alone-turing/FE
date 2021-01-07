@@ -16,13 +16,19 @@ class AddTimer extends React.Component {
     setText(currentState => {currentState[textKey] = textValue})
   }
 
+  validateForm = () => {
+    if (this.state.name && this.state.time && this.state.window) {
+      this.props.addTimer(this.state)
+    }
+  }
+
   render() {
     return (
       <View>
         <TextInput placeholder="Name" style={styles.input} onChangeText={text => { this.setState({ name: text }) }}/>
         <TextInput placeholder="Time" style={styles.input} onChangeText={text => { this.setState({ time: text }) }}/>
         <TextInput placeholder="Window" style={styles.input} onChangeText={text => { this.setState({ window: text }) }}/>
-        <Button buttonStyle={styles.buttonStyle} onPress={() => this.props.addTimer(this.state)} title='Add Item' titleStyle={styles.titleStyle}>
+        <Button buttonStyle={styles.buttonStyle} onPress={() => this.validateForm()} title='Add Item' titleStyle={styles.titleStyle}>
         </Button>
       </View>
     );
