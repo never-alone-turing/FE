@@ -24,7 +24,7 @@ class Receiver extends Component {
           <Header
             containerStyle={{ backgroundColor: 'black', justifyContent: 'space-around', paddingBottom: 10}}
             centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: 30, fontWeight: "bold" } }}
-            leftComponent={{ icon: 'home', color: '#fff', size: 40, onPress:() => navigation.navigate('Home')} }
+            leftComponent={{ icon: 'home', color: '#fff', size: 40, onPress:() => this.props.navigation.navigate('Home')} }
           />
         {/* <Checkin style={styles.checkinButton} /> */}
         <ScrollView snapToAlignment="center" decelerationRate="fast" horizontal >
