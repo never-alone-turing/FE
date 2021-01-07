@@ -9,11 +9,14 @@ class AddTimer extends React.Component {
       name: '',
       time: '',
       window: '',
-      placeholder: {
-        name: "Name",
-        time: "Time",
-        window: "Window"
-      }
+      placeholderName: "Name",
+      placeholderTime: "Time",
+      placeholderWindow: "Window",
+      // placeholder: {
+      //   name: "Name",
+      //   time: "Time",
+      //   window: "Window"
+      // }
     }
   }
 
@@ -25,11 +28,9 @@ class AddTimer extends React.Component {
     if (this.state.name && this.state.time && this.state.window) {
       this.props.addTimer(this.state);
       this.setState({ 
-        placeholder: {
-          name: "Name",
-          time: "Time",
-          window: "Window"
-        }
+        placeholderName: "Name",
+        placeholderTime: "Time",
+        placeholderWindow: "Window"  
       })
     } else {
       this.showError()
@@ -38,22 +39,22 @@ class AddTimer extends React.Component {
 
   showError = () => {
     if (!this.state.name) {
-      this.setState({ placeholder.name: "Give check-in a name"})
+      this.setState({ placeholderName: "Give check-in a name"})
     }
     if (!this.state.time) {
-      this.setState({ placeholder.time: "Select a time"})
+      this.setState({ placeholderTime: "Select a time"})
     }
-    if (!this.state.name) {
-      this.setState({ placeholder.window: "Give a timeframe"})
+    if (!this.state.window) {
+      this.setState({ placeholderWindow: "Give a timeframe"})
     }
   }
 
   render() {
     return (
       <View>
-        <TextInput placeholder={this.state.placeholder.name} style={styles.input} onChangeText={text => { this.setState({ name: text }) }}/>
-        <TextInput placeholder={this.state.placeholder.time} style={styles.input} onChangeText={text => { this.setState({ time: text }) }}/>
-        <TextInput placeholder={this.state.placeholder.window} style={styles.input} onChangeText={text => { this.setState({ window: text }) }}/>
+        <TextInput placeholder={this.state.placeholderName} style={styles.input} onChangeText={text => { this.setState({ name: text }) }}/>
+        <TextInput placeholder={this.state.placeholderTime} style={styles.input} onChangeText={text => { this.setState({ time: text }) }}/>
+        <TextInput placeholder={this.state.placeholderWindow} style={styles.input} onChangeText={text => { this.setState({ window: text }) }}/>
         <Button buttonStyle={styles.buttonStyle} onPress={() => this.validateForm()} title='Add Item' titleStyle={styles.titleStyle}>
         </Button>
       </View>
