@@ -31,6 +31,20 @@ class AddTimer extends React.Component {
           window: "Window"
         }
       })
+    } else {
+      this.showError()
+    }
+  }
+
+  showError = () => {
+    if (!this.state.name) {
+      this.setState({ placeholder.name: "Give check-in a name"})
+    }
+    if (!this.state.time) {
+      this.setState({ placeholder.time: "Select a time"})
+    }
+    if (!this.state.name) {
+      this.setState({ placeholder.window: "Give a timeframe"})
     }
   }
 
