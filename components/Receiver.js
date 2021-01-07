@@ -1,10 +1,8 @@
-import React, { useState, Component } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, FlatList, SafeAreaView, Button, Dimensions } from "react-native";
+import React, { Component } from "react";
+import { View, Text, StyleSheet, SafeAreaView } from "react-native";
 import { Header } from 'react-native-elements';
 import { ScrollView } from "react-native-gesture-handler";
-import Carousel from "react-native-snap-carousel";
 import Checkin from './Checkin';
-import ReceiverTimes from './ReceiverTimes';
 
 class Receiver extends Component {
   constructor() {
@@ -26,7 +24,6 @@ class Receiver extends Component {
             centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: 30, fontWeight: "bold" } }}
             leftComponent={{ icon: 'home', color: '#fff', size: 40, onPress:() => this.props.navigation.navigate('Home')} }
           />
-        {/* <Checkin style={styles.checkinButton} /> */}
         <ScrollView snapToAlignment="center" decelerationRate="fast" horizontal >
           {this.state.timers.map((task) => {
             return <View style={styles.task}>
@@ -44,15 +41,12 @@ class Receiver extends Component {
   }
 }
   
-
-
 const styles = StyleSheet.create({
   careReceiver: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: "center",
-    
   },
   listItem: {
     padding: 15,
@@ -81,7 +75,6 @@ const styles = StyleSheet.create({
   taskTime: {
     fontSize: 30,
     alignSelf: 'center',
-    
   }
 })
 
