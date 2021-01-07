@@ -6,13 +6,6 @@ import Carousel from "react-native-snap-carousel";
 import Checkin from './Checkin';
 import ReceiverTimes from './ReceiverTimes';
 
-// const Receiver = ({history, navigation}) => {
-//   const [timers, editTimers] = useState([
-//     {id: 1, category: "Wake-up", time: '7:00', window: '0:15'},
-//     {id: 2, category: "Take meds", time: '12:00', window: '1:00'},
-//     {id: 3, category: "go to sleep", time: '22:00', window: '1:00'}
-//   ])
-
 class Receiver extends Component {
   constructor() {
     super();
