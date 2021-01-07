@@ -26,15 +26,23 @@ class AddTimer extends React.Component {
 
   validateForm = () => {
     if (this.state.name && this.state.time && this.state.window) {
-      this.props.addTimer(this.state);
-      this.setState({ 
-        placeholderName: "Name",
-        placeholderTime: "Time",
-        placeholderWindow: "Window"  
-      })
+      this.props.addTimer(this.state)
+      this.resetBlankState()
+      this.props.setIsVisible(false)
     } else {
       this.showError()
     }
+  }
+
+  resetBlankState = () => {
+    this.setState({ 
+      name: '',
+      time: '',
+      window: '',
+      placeholderName: "Name",
+      placeholderTime: "Time",
+      placeholderWindow: "Window"  
+    })
   }
 
   showError = () => {
