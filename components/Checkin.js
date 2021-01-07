@@ -20,7 +20,7 @@ class Checkin extends React.Component {
 
   render() {
     return (
-      <TouchableOpacity style={this.state.currentStyle} onPress={() => this.changeDecider()}>
+      <TouchableOpacity style={this.state.currentStyle} onLongPress={() => this.changeDecider()}>
         <View>
           <Text>Touch me</Text>
         </View>
