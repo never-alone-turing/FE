@@ -11,10 +11,8 @@ const Receiver = ({history, navigation}) => {
   ])
   return (
     <View style={styles.careReceiver}>
-      <Text>Care Receiver</Text>
       <TouchableOpacity style={styles.listItem} onPress={() => navigation.navigate('Home')}>
         <View style={styles.listItemView}>
-          <Text>Back</Text>
         </View>
       </TouchableOpacity>
       <Checkin />
