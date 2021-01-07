@@ -8,7 +8,12 @@ class AddTimer extends React.Component {
     this.state = {
       name: '',
       time: '',
-      window: ''
+      window: '',
+      placeholder: {
+        name: "Name",
+        time: "Time",
+        window: "Window"
+      }
     }
   }
 
@@ -18,16 +23,23 @@ class AddTimer extends React.Component {
 
   validateForm = () => {
     if (this.state.name && this.state.time && this.state.window) {
-      this.props.addTimer(this.state)
+      this.props.addTimer(this.state);
+      this.setState({ 
+        placeholder: {
+          name: "Name",
+          time: "Time",
+          window: "Window"
+        }
+      })
     }
   }
 
   render() {
     return (
       <View>
-        <TextInput placeholder="Name" style={styles.input} onChangeText={text => { this.setState({ name: text }) }}/>
-        <TextInput placeholder="Time" style={styles.input} onChangeText={text => { this.setState({ time: text }) }}/>
-        <TextInput placeholder="Window" style={styles.input} onChangeText={text => { this.setState({ window: text }) }}/>
+        <TextInput placeholder={this.state.placeholder.name} style={styles.input} onChangeText={text => { this.setState({ name: text }) }}/>
+        <TextInput placeholder={this.state.placeholder.time} style={styles.input} onChangeText={text => { this.setState({ time: text }) }}/>
+        <TextInput placeholder={this.state.placeholder.window} style={styles.input} onChangeText={text => { this.setState({ window: text }) }}/>
         <Button buttonStyle={styles.buttonStyle} onPress={() => this.validateForm()} title='Add Item' titleStyle={styles.titleStyle}>
         </Button>
       </View>
