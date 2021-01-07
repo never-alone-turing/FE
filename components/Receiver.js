@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { View, Text, TouchableOpacity, StyleSheet, FlatList, SafeAreaView } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, FlatList, SafeAreaView, Button, Dimensions } from "react-native";
 import { Header } from 'react-native-elements';
 import { ScrollView } from "react-native-gesture-handler";
 import Carousel from "react-native-snap-carousel";
@@ -12,6 +12,8 @@ const Receiver = ({history, navigation}) => {
     {id: 2, category: "Take meds", time: '12:00', window: '1:00'},
     {id: 3, category: "go to sleep", time: '22:00', window: '1:00'}
   ])
+
+
   return (
     <SafeAreaView>
     <View style={styles.careReceiver}>
@@ -21,11 +23,14 @@ const Receiver = ({history, navigation}) => {
           leftComponent={{ icon: 'home', color: '#fff', size: 40, onPress:() => navigation.navigate('Home')} }
         />
       {/* <Checkin style={styles.checkinButton} /> */}
-      <ScrollView snapToAlignment="center" decelerationRate="fast" horizontal>
+      <ScrollView snapToAlignment="center" decelerationRate="fast" horizontal >
         {timers.map((task) => {
           return <View style={styles.task}>
-            <Text style={styles.taskCategory}>{task.category}</Text>
-            <Text style={styles.taskTime}>{task.time}</Text>
+            <Checkin />
+            <View>
+              <Text style={styles.taskCategory}>{task.category}</Text>
+              <Text style={styles.taskTime}>{task.time}</Text>
+            </View>
           </View>
         })}
       </ScrollView>
@@ -39,6 +44,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    textAlign: "center",
+    
   },
   listItem: {
     padding: 15,
@@ -53,13 +60,21 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   task: {
-    margin: 20
+    margin: 30,
+    padding: 30,
+    borderWidth: 3,
+    borderColor: "black",
+    borderRadius: 10, 
+    backgroundColor: '#E0E0E0',
   },
   taskCategory: {
     fontSize: 40,
+    alignSelf: 'center'
   },
   taskTime: {
-    fontSize: 30
+    fontSize: 30,
+    alignSelf: 'center',
+    
   }
 })
 
