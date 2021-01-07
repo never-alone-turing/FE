@@ -1,5 +1,8 @@
 import React, {useState} from "react";
-import { View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, FlatList, SafeAreaView } from "react-native";
+import { Header } from 'react-native-elements';
+import { ScrollView } from "react-native-gesture-handler";
+import Carousel from "react-native-snap-carousel";
 import Checkin from './Checkin';
 import ReceiverTimes from './ReceiverTimes';
 
@@ -10,20 +13,24 @@ const Receiver = ({history, navigation}) => {
     {id: 3, category: "go to sleep", time: '22:00', window: '1:00'}
   ])
   return (
+    <SafeAreaView>
     <View style={styles.careReceiver}>
-      <TouchableOpacity style={styles.listItem} onPress={() => navigation.navigate('Home')}>
-        <View style={styles.listItemView}>
-        </View>
-      </TouchableOpacity>
-      <Checkin />
-      <FlatList
-        data={timers}
-        renderItem={({ item }) => (
-          <ReceiverTimes item={item} />
-        )}
-        keyExtractor={(item) => item.id.toString()}
-      />
+        <Header
+          containerStyle={{ backgroundColor: 'black', justifyContent: 'space-around', paddingBottom: 10}}
+          centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: 30, fontWeight: "bold" } }}
+          leftComponent={{ icon: 'home', color: '#fff', size: 40, onPress:() => navigation.navigate('Home')} }
+        />
+      {/* <Checkin style={styles.checkinButton} /> */}
+      <ScrollView snapToAlignment="center" decelerationRate="fast" horizontal>
+        {timers.map((task) => {
+          return <View style={styles.task}>
+            <Text style={styles.taskCategory}>{task.category}</Text>
+            <Text style={styles.taskTime}>{task.time}</Text>
+          </View>
+        })}
+      </ScrollView>
     </View>
+    </SafeAreaView>
   );
 }
 
@@ -44,6 +51,15 @@ const styles = StyleSheet.create({
   },
   listItemText: {
     fontSize: 18
+  },
+  task: {
+    margin: 20
+  },
+  taskCategory: {
+    fontSize: 40,
+  },
+  taskTime: {
+    fontSize: 30
   }
 })
 
