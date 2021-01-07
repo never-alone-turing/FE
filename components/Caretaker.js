@@ -52,7 +52,7 @@ const Caretaker = ({history, navigation}) => {
 
       <BottomSheet isVisible={isVisible} containerStyle={{}}>
         <Button buttonStyle={styles.buttonStyle} title='x' titleStyle={styles.titleStyle} onPress={() => setIsVisible(false)}></Button>
-        <AddTimer addTimer={addTimer}/>
+        <AddTimer addTimer={addTimer} setIsVisible={setIsVisible}/>
       </BottomSheet>
 
     </View>
