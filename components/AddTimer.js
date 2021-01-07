@@ -12,11 +12,6 @@ class AddTimer extends React.Component {
       placeholderName: "Name",
       placeholderTime: "Time",
       placeholderWindow: "Window",
-      // placeholder: {
-      //   name: "Name",
-      //   time: "Time",
-      //   window: "Window"
-      // }
     }
   }
 
