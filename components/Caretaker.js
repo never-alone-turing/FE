@@ -1,9 +1,8 @@
 import React, {useState} from "react";
-import { Button, Header, BottomSheet } from 'react-native-elements';
-import { View, Text, TouchableOpacity, StyleSheet, FlatList, Modal } from "react-native";
+import { Button, Header } from 'react-native-elements';
+import { View, StyleSheet, FlatList, Modal } from "react-native";
 import Times from './Times';
 import AddTask from './AddTask';
-import { CardStyleInterpolators } from "react-navigation-stack";
 
 const Caretaker = ({history, navigation}) => {
   const [timers, editTimers] = useState([
