@@ -20,9 +20,9 @@ class Checkin extends React.Component {
 
   render() {
     return (
-      <TouchableOpacity style={this.state.currentStyle} onPress={() => this.changeDecider()}>
+      <TouchableOpacity style={this.state.currentStyle} onLongPress={() => this.changeDecider()}>
         <View>
-          <Text>Touch me</Text>
+          <Text style={styles.buttonText}>Hold to complete task.</Text>
         </View>
       </TouchableOpacity>
     );
@@ -37,7 +37,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#69c986',
     height: 300,
     width: 300,
+    marginBottom: 40, 
+    borderColor: "#69c986",
+    borderWidth: 10,
     borderRadius: 300 / 2
+  },
+  buttonText: {
+    fontSize: 35,
+    textAlign: 'center'
   }
 })
 
@@ -49,6 +56,9 @@ const styles2 = StyleSheet.create({
     backgroundColor: '#f5a3af',
     height: 300,
     width: 300,
+    marginBottom: 40, 
+    borderColor: "#f5a3af",
+    borderWidth: 10,
     borderRadius: 300 / 2
   }
 })

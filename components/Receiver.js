@@ -1,39 +1,53 @@
-import React, {useState} from "react";
-import { View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
+import React, { Component } from "react";
+import { View, Text, StyleSheet, SafeAreaView } from "react-native";
+import { Header } from 'react-native-elements';
+import { ScrollView } from "react-native-gesture-handler";
 import Checkin from './Checkin';
-import ReceiverTimes from './ReceiverTimes';
 
-const Receiver = ({history, navigation}) => {
-  const [timers, editTimers] = useState([
-    {id: 1, category: "Wake-up", time: '7:00', window: '0:15'},
-    {id: 2, category: "Take meds", time: '12:00', window: '1:00'},
-    {id: 3, category: "go to sleep", time: '22:00', window: '1:00'}
-  ])
-  return (
-    <View style={styles.careReceiver}>
-      <Text>Care Receiver</Text>
-      <TouchableOpacity style={styles.listItem} onPress={() => navigation.navigate('Home')}>
-        <View style={styles.listItemView}>
-          <Text>Back</Text>
-        </View>
-      </TouchableOpacity>
-      <Checkin />
-      <FlatList
-        data={timers}
-        renderItem={({ item }) => (
-          <ReceiverTimes item={item} />
-        )}
-        keyExtractor={(item) => item.id.toString()}
-      />
-    </View>
-  );
+class Receiver extends Component {
+  constructor() {
+    super();
+    this.state = {
+      timers: [
+        {id: 1, category: "Wake-up", time: '7:00', window: '0:15', completed: "false"},
+        {id: 2, category: "Take meds", time: '12:00', window: '1:00'},
+        {id: 3, category: "go to sleep", time: '22:00', window: '1:00'}
+      ]
+    }
+  }
+  
+  render () {
+    return (
+      <SafeAreaView>
+      <View style={styles.careReceiver}>
+          <Header
+            containerStyle={{ backgroundColor: 'black', justifyContent: 'space-around', paddingBottom: 10}}
+            centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: 30, fontWeight: "bold" } }}
+            leftComponent={{ icon: 'home', color: '#fff', size: 40, onPress:() => this.props.navigation.navigate('Home')} }
+          />
+        <ScrollView snapToAlignment="center" decelerationRate="fast" horizontal >
+          {this.state.timers.map((task) => {
+            return <View style={styles.task} key={task.id}>
+              <Checkin />
+              <View>
+                <Text style={styles.taskCategory}>{task.category}</Text>
+                <Text style={styles.taskTime}>{task.time}</Text>
+              </View>
+            </View>
+          })}
+        </ScrollView>
+      </View>
+      </SafeAreaView>
+    )
+  }
 }
-
+  
 const styles = StyleSheet.create({
   careReceiver: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    textAlign: "center",
   },
   listItem: {
     padding: 15,
@@ -46,6 +60,22 @@ const styles = StyleSheet.create({
   },
   listItemText: {
     fontSize: 18
+  },
+  task: {
+    margin: 30,
+    padding: 30,
+    borderWidth: 3,
+    borderColor: "black",
+    borderRadius: 10, 
+    backgroundColor: '#E0E0E0',
+  },
+  taskCategory: {
+    fontSize: 40,
+    alignSelf: 'center'
+  },
+  taskTime: {
+    fontSize: 30,
+    alignSelf: 'center',
   }
 })
 
