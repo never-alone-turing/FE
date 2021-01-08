@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Button, Header, BottomSheet } from 'react-native-elements';
-import { View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, FlatList, Modal } from "react-native";
 import Times from './Times';
 import AddTimer from './AddTimer';
 import { CardStyleInterpolators } from "react-navigation-stack";
@@ -30,7 +30,7 @@ const Caretaker = ({history, navigation}) => {
     })
   }
 
-  const [isVisible, setIsVisible] = useState(false);
+  const [modalVisible, setIsVisible] = useState(false);
 
   return (
     <View>
@@ -50,10 +50,10 @@ const Caretaker = ({history, navigation}) => {
           keyExtractor={(item) => item.id.toString()}
         />  
 
-      <BottomSheet isVisible={isVisible} containerStyle={{}}>
-        <Button buttonStyle={styles.buttonStyle} title='x' titleStyle={styles.titleStyle} onPress={() => setIsVisible(false)}></Button>
+      <Modal visible={modalVisible} containerStyle={styles.addTaskMenu}>
+        <Button buttonStyle={styles.buttonStyle} title='x' titleStyle={styles.titleStyle} onPress={() => setIsVisible(!modalVisible)}></Button>
         <AddTimer addTimer={addTimer} setIsVisible={setIsVisible}/>
-      </BottomSheet>
+      </Modal>
 
     </View>
   );
@@ -82,6 +82,10 @@ const styles = StyleSheet.create({
   },
   titleStyle: {
     fontSize: 30
+  },
+  addTaskMenu: {
+    display: "flex",
+    justifyContent: "flex-start"
   }
 })
 
