@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkin /> renders correctly 1`] = `
+<View
+  accessible={true}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#69c986",
+      "borderColor": "#69c986",
+      "borderRadius": 150,
+      "borderWidth": 10,
+      "display": "flex",
+      "height": 300,
+      "justifyContent": "center",
+      "marginBottom": 40,
+      "opacity": 1,
+      "width": 300,
+    }
+  }
+>
+  <View>
+    <Text
+      style={
+        Object {
+          "fontSize": 35,
+          "textAlign": "center",
+        }
+      }
+    >
+      Hold to complete task.
+    </Text>
+  </View>
+</View>
+`;
