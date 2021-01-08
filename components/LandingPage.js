@@ -38,6 +38,7 @@ const LandingPage = ({ navigation }) => {
 
       <TouchableOpacity
         style={styles.careTakerButton}
+        testID="caretaker-button"
         onPress={() => navigation.navigate('Caretaker')}
       >
         <Text style={styles.buttonText}>Caretaker</Text>
