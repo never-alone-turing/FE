@@ -1,9 +1,8 @@
 import React, {useState} from "react";
-import { Button, Header, BottomSheet } from 'react-native-elements';
-import { View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
+import { Button, Header } from 'react-native-elements';
+import { View, StyleSheet, FlatList, Modal } from "react-native";
 import Times from './Times';
-import AddTimer from './AddTimer';
-import { CardStyleInterpolators } from "react-navigation-stack";
+import AddTask from './AddTask';
 
 const Caretaker = ({history, navigation}) => {
   const [timers, editTimers] = useState([
@@ -30,7 +29,7 @@ const Caretaker = ({history, navigation}) => {
     })
   }
 
-  const [isVisible, setIsVisible] = useState(false);
+  const [modalVisible, setIsVisible] = useState(false);
 
   return (
     <View>
@@ -50,10 +49,10 @@ const Caretaker = ({history, navigation}) => {
           keyExtractor={(item) => item.id.toString()}
         />  
 
-      <BottomSheet isVisible={isVisible} containerStyle={{}}>
-        <Button buttonStyle={styles.buttonStyle} title='x' titleStyle={styles.titleStyle} onPress={() => setIsVisible(false)}></Button>
-        <AddTimer addTimer={addTimer} setIsVisible={setIsVisible}/>
-      </BottomSheet>
+      <Modal visible={modalVisible} animationType="slide">
+        <Button buttonStyle={styles.buttonStyle} title='Close Menu' titleStyle={styles.titleStyle} onPress={() => setIsVisible(!modalVisible)}></Button>
+        <AddTask addTimer={addTimer} setIsVisible={setIsVisible}/>
+      </Modal>
 
     </View>
   );
@@ -77,11 +76,13 @@ const styles = StyleSheet.create({
     width: "auto", 
     alignSelf: "flex-end",
     textAlign: "center",
-    margin: 20,
+    marginTop: 50,
+    marginRight: 30,
     padding: 10,
   },
   titleStyle: {
-    fontSize: 30
+    fontSize: 20,
+    fontWeight: "bold"
   }
 })
 

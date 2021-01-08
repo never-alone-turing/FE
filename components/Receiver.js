@@ -9,12 +9,13 @@ class Receiver extends Component {
     super();
     this.state = {
       timers: [
-        {id: 1, category: "Wake-up", time: '7:00', window: '0:15'},
+        {id: 1, category: "Wake-up", time: '7:00', window: '0:15', completed: "false"},
         {id: 2, category: "Take meds", time: '12:00', window: '1:00'},
         {id: 3, category: "go to sleep", time: '22:00', window: '1:00'}
       ]
     }
   }
+  
   render () {
     return (
       <SafeAreaView>
@@ -26,7 +27,7 @@ class Receiver extends Component {
           />
         <ScrollView snapToAlignment="center" decelerationRate="fast" horizontal >
           {this.state.timers.map((task) => {
-            return <View style={styles.task}>
+            return <View style={styles.task} key={task.id}>
               <Checkin />
               <View>
                 <Text style={styles.taskCategory}>{task.category}</Text>
