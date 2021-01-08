@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, TextInput } from "react-native";
 import { Button } from "react-native-elements";
 
-class AddTimer extends React.Component {
+class AddTask extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -81,4 +81,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default AddTimer;
+export default AddTask;

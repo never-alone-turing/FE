@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { Button, Header, BottomSheet } from 'react-native-elements';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList, Modal } from "react-native";
 import Times from './Times';
-import AddTimer from './AddTimer';
+import AddTask from './AddTask';
 import { CardStyleInterpolators } from "react-navigation-stack";
 
 const Caretaker = ({history, navigation}) => {
@@ -50,9 +50,9 @@ const Caretaker = ({history, navigation}) => {
           keyExtractor={(item) => item.id.toString()}
         />  
 
-      <Modal visible={modalVisible} containerStyle={styles.addTaskMenu}>
+      <Modal visible={modalVisible} >
         <Button buttonStyle={styles.buttonStyle} title='x' titleStyle={styles.titleStyle} onPress={() => setIsVisible(!modalVisible)}></Button>
-        <AddTimer addTimer={addTimer} setIsVisible={setIsVisible}/>
+        <AddTask addTimer={addTimer} setIsVisible={setIsVisible}/>
       </Modal>
 
     </View>
@@ -82,10 +82,6 @@ const styles = StyleSheet.create({
   },
   titleStyle: {
     fontSize: 30
-  },
-  addTaskMenu: {
-    display: "flex",
-    justifyContent: "flex-start"
   }
 })
 
