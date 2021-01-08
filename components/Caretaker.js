@@ -34,7 +34,7 @@ const Caretaker = ({history, navigation}) => {
   return (
     <View>
       <Header
-   
+
         containerStyle={{ backgroundColor: 'black', justifyContent: 'space-between' }}
         centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: 30, fontWeight: "bold" } }}
         leftComponent={{ icon: 'home', color: '#fff', size: 40, onPress:() => navigation.navigate('Home')} }
@@ -47,7 +47,7 @@ const Caretaker = ({history, navigation}) => {
             <Times item={item} deleteTimer={deleteTimer}/>
           )}
           keyExtractor={(item) => item.id.toString()}
-        />  
+        />
 
       <Modal visible={modalVisible} animationType="slide">
         <Button buttonStyle={styles.buttonStyle} title='Close Menu' titleStyle={styles.titleStyle} onPress={() => setIsVisible(!modalVisible)}></Button>
@@ -72,8 +72,8 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   buttonStyle: {
-    backgroundColor: "black", 
-    width: "auto", 
+    backgroundColor: "black",
+    width: "auto",
     alignSelf: "flex-end",
     textAlign: "center",
     marginTop: 50,
