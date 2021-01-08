@@ -1,17 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`snapshot 1`] = `
+exports[`<LandingPage/> renders correctly 1`] = `
 <View>
   <View
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "black",
+        "backgroundColor": "#2089dc",
         "borderBottomColor": "#f2f2f2",
         "borderBottomWidth": 0.5,
         "flexDirection": "row",
-        "justifyContent": "space-around",
-        "paddingBottom": 10,
+        "justifyContent": "space-between",
         "paddingHorizontal": 10,
         "paddingVertical": 10,
       }
@@ -50,15 +49,7 @@ exports[`snapshot 1`] = `
           }
         >
           <View
-            accessible={true}
-            focusable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
+            icon="menu"
           >
             <View
               style={
@@ -87,13 +78,11 @@ exports[`snapshot 1`] = `
           style={
             Object {
               "color": "#fff",
-              "fontSize": 30,
-              "fontWeight": "bold",
             }
           }
-          text="Never Alone"
+          text="MY TITLE"
         >
-          Never Alone
+          MY TITLE
         </Text>
       </View>
       <View
@@ -103,7 +92,32 @@ exports[`snapshot 1`] = `
             "flex": 1,
           }
         }
-      />
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "overflow": "hidden",
+            }
+          }
+        >
+          <View
+            icon="home"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "transparent",
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Text />
+            </View>
+          </View>
+        </View>
+      </View>
     </RNCSafeAreaView>
   </View>
   <Text
