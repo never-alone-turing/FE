@@ -50,8 +50,8 @@ const Caretaker = ({history, navigation}) => {
           keyExtractor={(item) => item.id.toString()}
         />  
 
-      <Modal visible={modalVisible} >
-        <Button buttonStyle={styles.buttonStyle} title='x' titleStyle={styles.titleStyle} onPress={() => setIsVisible(!modalVisible)}></Button>
+      <Modal visible={modalVisible} animationType="slide">
+        <Button buttonStyle={styles.buttonStyle} title='Close Menu' titleStyle={styles.titleStyle} onPress={() => setIsVisible(!modalVisible)}></Button>
         <AddTask addTimer={addTimer} setIsVisible={setIsVisible}/>
       </Modal>
 
@@ -77,11 +77,13 @@ const styles = StyleSheet.create({
     width: "auto", 
     alignSelf: "flex-end",
     textAlign: "center",
-    margin: 20,
+    marginTop: 50,
+    marginRight: 30,
     padding: 10,
   },
   titleStyle: {
-    fontSize: 30
+    fontSize: 20,
+    fontWeight: "bold"
   }
 })
 
