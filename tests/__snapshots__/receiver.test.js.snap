@@ -1,0 +1,356 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Receiver /> renders correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "textAlign": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "black",
+          "borderBottomColor": "#f2f2f2",
+          "borderBottomWidth": 0.5,
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+          "paddingBottom": 10,
+          "paddingHorizontal": 10,
+          "paddingVertical": 10,
+        }
+      }
+      testID="headerContainer"
+    >
+      <RNCSafeAreaView
+        edges={
+          Array [
+            "left",
+            "top",
+            "right",
+          ]
+        }
+        style={
+          Object {
+            "flexDirection": "row",
+            "width": "100%",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "flex-start",
+                "overflow": "hidden",
+              }
+            }
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "justifyContent": "center",
+                  }
+                }
+              >
+                <Text />
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 3,
+            }
+          }
+        >
+          <Text
+            numberOfLines={1}
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 30,
+                "fontWeight": "bold",
+              }
+            }
+            text="Never Alone"
+          >
+            Never Alone
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "flex": 1,
+            }
+          }
+        />
+      </RNCSafeAreaView>
+    </View>
+    <RCTScrollView
+      collapsable={false}
+      decelerationRate="fast"
+      horizontal={true}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+      snapToAlignment="center"
+    >
+      <View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#E0E0E0",
+              "borderColor": "black",
+              "borderRadius": 10,
+              "borderWidth": 3,
+              "margin": 30,
+              "padding": 30,
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#69c986",
+                "borderColor": "#69c986",
+                "borderRadius": 150,
+                "borderWidth": 10,
+                "display": "flex",
+                "height": 300,
+                "justifyContent": "center",
+                "marginBottom": 40,
+                "opacity": 1,
+                "width": 300,
+              }
+            }
+          >
+            <View>
+              <Text
+                style={
+                  Object {
+                    "fontSize": 35,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Hold to complete task.
+              </Text>
+            </View>
+          </View>
+          <View>
+            <Text
+              style={
+                Object {
+                  "alignSelf": "center",
+                  "fontSize": 40,
+                }
+              }
+            >
+              Wake-up
+            </Text>
+            <Text
+              style={
+                Object {
+                  "alignSelf": "center",
+                  "fontSize": 30,
+                }
+              }
+            >
+              7:00
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#E0E0E0",
+              "borderColor": "black",
+              "borderRadius": 10,
+              "borderWidth": 3,
+              "margin": 30,
+              "padding": 30,
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#69c986",
+                "borderColor": "#69c986",
+                "borderRadius": 150,
+                "borderWidth": 10,
+                "display": "flex",
+                "height": 300,
+                "justifyContent": "center",
+                "marginBottom": 40,
+                "opacity": 1,
+                "width": 300,
+              }
+            }
+          >
+            <View>
+              <Text
+                style={
+                  Object {
+                    "fontSize": 35,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Hold to complete task.
+              </Text>
+            </View>
+          </View>
+          <View>
+            <Text
+              style={
+                Object {
+                  "alignSelf": "center",
+                  "fontSize": 40,
+                }
+              }
+            >
+              Take meds
+            </Text>
+            <Text
+              style={
+                Object {
+                  "alignSelf": "center",
+                  "fontSize": 30,
+                }
+              }
+            >
+              12:00
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#E0E0E0",
+              "borderColor": "black",
+              "borderRadius": 10,
+              "borderWidth": 3,
+              "margin": 30,
+              "padding": 30,
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#69c986",
+                "borderColor": "#69c986",
+                "borderRadius": 150,
+                "borderWidth": 10,
+                "display": "flex",
+                "height": 300,
+                "justifyContent": "center",
+                "marginBottom": 40,
+                "opacity": 1,
+                "width": 300,
+              }
+            }
+          >
+            <View>
+              <Text
+                style={
+                  Object {
+                    "fontSize": 35,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Hold to complete task.
+              </Text>
+            </View>
+          </View>
+          <View>
+            <Text
+              style={
+                Object {
+                  "alignSelf": "center",
+                  "fontSize": 40,
+                }
+              }
+            >
+              go to sleep
+            </Text>
+            <Text
+              style={
+                Object {
+                  "alignSelf": "center",
+                  "fontSize": 30,
+                }
+              }
+            >
+              22:00
+            </Text>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</RCTSafeAreaView>
+`;
