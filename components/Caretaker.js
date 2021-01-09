@@ -6,9 +6,9 @@ import AddTask from './AddTask';
 
 const Caretaker = ({history, navigation}) => {
   const [timers, editTimers] = useState([
-    {id: 1, name: "Wake-up", time: '7:00', window: '0:15'},
-    {id: 2, name: "Take meds", time: '12:00', window: '1:00'},
-    {id: 3, name: "go to sleep", time: '22:00', window: '1:00'}
+    {id: 1, name: "Wake-up", time: new Date(), window: new Date()},
+    {id: 2, name: "Take meds", time: new Date(), window: new Date()},
+    {id: 3, name: "go to sleep", time: new Date(), window: new Date()}
   ])
   const deleteTimer = (id) => {
     editTimers(prevTimers => {
