@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, SafeAreaView } from "react-native";
 import { Header } from 'react-native-elements';
 import { ScrollView } from "react-native-gesture-handler";
 import Checkin from './Checkin';
+import normalize from 'react-native-normalize';
 
 class Receiver extends Component {
   constructor() {
@@ -21,9 +22,9 @@ class Receiver extends Component {
       <SafeAreaView>
       <View style={styles.careReceiver}>
           <Header
-            containerStyle={{ backgroundColor: 'black', justifyContent: 'space-around', paddingBottom: 10}}
-            centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: 30, fontWeight: "bold" } }}
-            leftComponent={{ icon: 'home', color: '#fff', size: 40, onPress:() => this.props.navigation.navigate('Home')} }
+            containerStyle={{ backgroundColor: 'black', justifyContent: 'space-around', paddingBottom: normalize(10) }}
+            centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: normalize(30), fontWeight: "bold" } }}
+            leftComponent={{ icon: 'home', color: '#fff', size: normalize(40), onPress:() => this.props.navigation.navigate('Home')} }
           />
         <ScrollView snapToAlignment="center" decelerationRate="fast" horizontal >
           {this.state.timers.map((task) => {

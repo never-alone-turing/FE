@@ -3,6 +3,7 @@ import { Button, Header } from 'react-native-elements';
 import { View, StyleSheet, FlatList, Modal } from "react-native";
 import Times from './Times';
 import AddTask from './AddTask';
+import normalize from 'react-native-normalize';
 
 const Caretaker = ({history, navigation}) => {
   const [timers, editTimers] = useState([
@@ -34,11 +35,10 @@ const Caretaker = ({history, navigation}) => {
   return (
     <View>
       <Header
-   
         containerStyle={{ backgroundColor: 'black', justifyContent: 'space-between' }}
-        centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: 30, fontWeight: "bold" } }}
-        leftComponent={{ icon: 'home', color: '#fff', size: 40, onPress:() => navigation.navigate('Home')} }
-        rightComponent={{ icon: 'add', color: '#fff', size: 40, onPress:() => setIsVisible(true)} }
+        centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: normalize(30), fontWeight: "bold" } }}
+        leftComponent={{ icon: 'home', color: '#fff', size: normalize(40), onPress:() => navigation.navigate('Home')} }
+        rightComponent={{ icon: 'add', color: '#fff', size: normalize(40), onPress:() => setIsVisible(true)} }
       />
 
       <FlatList
