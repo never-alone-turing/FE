@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, TextInput } from "react-native";
+import { View, StyleSheet, TextInput, Text } from "react-native";
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { Button } from "react-native-elements";
 
@@ -8,13 +8,15 @@ class AddTask extends React.Component {
     super();
     this.state = {
       name: '',
-      time: new Date(1598051730000),
-      window: new Date(1598051730000),
+      time: new Date(),
+      window: new Date(),
       // time: new Date(1598051730000),
       // window: new Date(1598051730000),
       placeholderName: "Name",
       placeholderTime: "Time",
       placeholderWindow: "Window",
+      viewTime: false,
+      viewWindow: false
     }
   }
 
@@ -41,7 +43,9 @@ class AddTask extends React.Component {
       window: new Date(1598051730000),
       placeholderName: "Name",
       placeholderTime: "Time",
-      placeholderWindow: "Window"  
+      placeholderWindow: "Window",
+      viewTime: false,
+      viewWindow: false
     })
   }
 
@@ -74,12 +78,16 @@ class AddTask extends React.Component {
     return (
       <View>
         <TextInput placeholder={this.state.placeholderName} style={styles.input} onChangeText={text => { this.setState({ name: text }) }}/>
-        <DateTimePicker value={this.state.time} display='spinner' onChange={this.onChangeTime} is24Hour={true} mode={'time'}/>
-        <DateTimePicker value={this.state.window} display='spinner' onChange={this.onChangeWindow} is24Hour={true} mode={'time'}/>
-        {/* <DateTimePicker value={this.state.time} name={'time'} display='clock' onChange={time => { this.setState({ time }) }} mode={'time'}/> */}
-        {/* <DateTimePicker value={this.state.time} name={'window'} display='clock' onChange={time => { this.setState({ window: time }) }} mode={'time'}/> */}
-        {/* <TextInput placeholder={this.state.placeholderTime} style={styles.input} onChangeText={text => { this.setState({ time: text }) }}/>
-        <TextInput placeholder={this.state.placeholderWindow} style={styles.input} onChangeText={text => { this.setState({ window: text }) }}/> */}
+        <TextInput placeholder={this.state.placeholderTime} style={styles.input} onFocus={() => this.setState({ viewTime: true }) }>
+          {this.state.viewTime && <Text>{this.state.time.getHours().toString()}:{this.state.time.getMinutes().toString()}</Text>}
+        </TextInput>
+        <TextInput placeholder={this.state.placeholderWindow} style={styles.input} onFocus={() => this.setState({ viewWindow: true }) }>
+          {this.state.viewWindow && <Text>{this.state.window.getHours().toString()}:{this.state.window.getMinutes().toString()}</Text>}
+        </TextInput>
+        {this.state.viewTime && 
+        <DateTimePicker value={this.state.time} display='spinner' onChange={this.onChangeTime} is24Hour={true} mode={'time'}/>}
+        {this.state.viewWindow && 
+        <DateTimePicker value={this.state.window} display='spinner' onChange={this.onChangeWindow} is24Hour={true} mode={'time'}/>}
         <Button buttonStyle={styles.buttonStyle} onPress={() => this.validateForm()} title='Add Item' titleStyle={styles.titleStyle}>
         </Button>
       </View>
