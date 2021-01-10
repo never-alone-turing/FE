@@ -2,13 +2,14 @@ import React from "react";
 import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
 
 const Times = ({item, deleteTimer}) => {
+  console.log('item', item)
   return (
       <TouchableOpacity style={styles.listItem} >
         <View style={styles.listItemView}>
           <Button title='X' style={styles.closeButton} onPress={() => deleteTimer(item.id)}/>
           <Text style={styles.listItemName}>Name: {item.name}</Text>
-          <Text style={styles.listItemName}>Time: {item.time}</Text>
-          <Text style={styles.listItemName}>Window: {item.window}</Text>
+          <Text style={styles.listItemName}>Time: {item.time.getHours().toString()}:{item.time.getMinutes().toString()}</Text>
+          <Text style={styles.listItemName}>Window: {item.window.getHours().toString()}:{item.window.getMinutes().toString()}</Text>
         </View>
       </TouchableOpacity>
   );
