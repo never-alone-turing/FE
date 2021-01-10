@@ -27,7 +27,7 @@ class AddTask extends React.Component {
   // }
 
   validateForm = () => {
-    if (this.state.name && this.state.time && this.state.window) {
+    if (this.state.name && this.state.viewTime && this.state.viewWindow ) {
       this.props.addTimer(this.state)
       this.resetBlankState()
       this.props.setIsVisible(false)
@@ -53,10 +53,10 @@ class AddTask extends React.Component {
     if (!this.state.name) {
       this.setState({ placeholderName: "Give check-in a name"})
     }
-    if (!this.state.time) {
+    if (!this.state.viewTime) {
       this.setState({ placeholderTime: "Select a time"})
     }
-    if (!this.state.window) {
+    if (!this.state.viewWindow) {
       this.setState({ placeholderWindow: "Give a timeframe"})
     }
   }
