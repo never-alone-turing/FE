@@ -10,8 +10,6 @@ class AddTask extends React.Component {
       name: '',
       time: new Date(),
       window: new Date(),
-      // time: new Date(1598051730000),
-      // window: new Date(1598051730000),
       placeholderName: "Name",
       placeholderTime: "Time",
       placeholderWindow: "Window",
@@ -19,12 +17,6 @@ class AddTask extends React.Component {
       viewWindow: false
     }
   }
-
-  // const [date, setDate] = useState(new)
-
-  // onChange = (textKey, textValue) => {
-  //   setText(currentState => {currentState[textKey] = textValue})
-  // }
 
   validateForm = () => {
     if (this.state.name && this.state.viewTime && this.state.viewWindow ) {
@@ -79,15 +71,17 @@ class AddTask extends React.Component {
       <View>
         <TextInput placeholder={this.state.placeholderName} style={styles.input} onChangeText={text => { this.setState({ name: text }) }}/>
         <TextInput placeholder={this.state.placeholderTime} style={styles.input} onFocus={() => this.setState({ viewTime: true }) }>
-          {this.state.viewTime && <Text>{this.state.time.getHours().toString()}:{this.state.time.getMinutes().toString()}</Text>}
+          {this.state.viewTime && 
+            <Text>{this.state.time.getHours().toString()}:{this.state.time.getMinutes().toString()}</Text>}
         </TextInput>
         <TextInput placeholder={this.state.placeholderWindow} style={styles.input} onFocus={() => this.setState({ viewWindow: true }) }>
-          {this.state.viewWindow && <Text>{this.state.window.getHours().toString()}:{this.state.window.getMinutes().toString()}</Text>}
+          {this.state.viewWindow && 
+            <Text>{this.state.window.getHours().toString()}:{this.state.window.getMinutes().toString()}</Text>}
         </TextInput>
         {this.state.viewTime && 
-        <DateTimePicker value={this.state.time} display='spinner' onChange={this.onChangeTime} is24Hour={true} mode={'time'}/>}
+          <DateTimePicker value={this.state.time} display='spinner' onChange={this.onChangeTime} is24Hour={true} mode={'time'}/>}
         {this.state.viewWindow && 
-        <DateTimePicker value={this.state.window} display='spinner' onChange={this.onChangeWindow} is24Hour={true} mode={'time'}/>}
+          <DateTimePicker value={this.state.window} display='spinner' onChange={this.onChangeWindow} is24Hour={true} mode={'time'}/>}
         <Button buttonStyle={styles.buttonStyle} onPress={() => this.validateForm()} title='Add Item' titleStyle={styles.titleStyle}>
         </Button>
       </View>
