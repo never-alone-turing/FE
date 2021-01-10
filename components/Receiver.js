@@ -63,19 +63,19 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   task: {
-    margin: 30,
-    padding: 30,
-    borderWidth: 3,
+    margin: normalize(30),
+    padding: normalize(30),
+    borderWidth: normalize(3),
     borderColor: "black",
-    borderRadius: 10, 
+    borderRadius: normalize(10), 
     backgroundColor: '#E0E0E0',
   },
   taskCategory: {
-    fontSize: 40,
+    fontSize: normalize(40),
     alignSelf: 'center'
   },
   taskTime: {
-    fontSize: 30,
+    fontSize: normalize(30),
     alignSelf: 'center',
   }
 })

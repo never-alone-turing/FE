@@ -4,6 +4,7 @@ import { View, StyleSheet, FlatList, Modal } from "react-native";
 import Times from './Times';
 import AddTask from './AddTask';
 import normalize from 'react-native-normalize';
+import { ScrollView } from "react-native-gesture-handler";
 
 const Caretaker = ({history, navigation}) => {
   const [timers, editTimers] = useState([
@@ -40,7 +41,7 @@ const Caretaker = ({history, navigation}) => {
         leftComponent={{ icon: 'home', color: '#fff', size: normalize(40), onPress:() => navigation.navigate('Home')} }
         rightComponent={{ icon: 'add', color: '#fff', size: normalize(40), onPress:() => setIsVisible(true)} }
       />
-
+      <View>
       <FlatList
           data={timers}
           renderItem={({ item }) => (
@@ -48,7 +49,7 @@ const Caretaker = ({history, navigation}) => {
           )}
           keyExtractor={(item) => item.id.toString()}
         />  
-
+      </View>
       <Modal visible={modalVisible} animationType="slide">
         <Button buttonStyle={styles.buttonStyle} title='Close Menu' titleStyle={styles.titleStyle} onPress={() => setIsVisible(!modalVisible)}></Button>
         <AddTask addTimer={addTimer} setIsVisible={setIsVisible}/>
