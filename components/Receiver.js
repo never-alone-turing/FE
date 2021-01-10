@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, SafeAreaView } from "react-native";
 import { Header } from 'react-native-elements';
 import { ScrollView } from "react-native-gesture-handler";
 import Checkin from './Checkin';
+import normalize from 'react-native-normalize';
 
 class Receiver extends Component {
   constructor() {
@@ -21,9 +22,9 @@ class Receiver extends Component {
       <SafeAreaView>
       <View style={styles.careReceiver}>
           <Header
-            containerStyle={{ backgroundColor: 'black', justifyContent: 'space-around', paddingBottom: 10}}
-            centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: 30, fontWeight: "bold" } }}
-            leftComponent={{ icon: 'home', color: '#fff', size: 40, onPress:() => this.props.navigation.navigate('Home')} }
+            containerStyle={{ backgroundColor: 'black', justifyContent: 'space-around', paddingBottom: normalize(10) }}
+            centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: normalize(30), fontWeight: "bold" } }}
+            leftComponent={{ icon: 'home', color: '#fff', size: normalize(40), onPress:() => this.props.navigation.navigate('Home')} }
           />
         <ScrollView snapToAlignment="center" decelerationRate="fast" horizontal >
           {this.state.timers.map((task) => {
@@ -62,19 +63,19 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   task: {
-    margin: 30,
-    padding: 30,
-    borderWidth: 3,
+    margin: normalize(30),
+    padding: normalize(30),
+    borderWidth: normalize(3),
     borderColor: "black",
-    borderRadius: 10, 
+    borderRadius: normalize(10), 
     backgroundColor: '#E0E0E0',
   },
   taskCategory: {
-    fontSize: 40,
+    fontSize: normalize(40),
     alignSelf: 'center'
   },
   taskTime: {
-    fontSize: 30,
+    fontSize: normalize(30),
     alignSelf: 'center',
   }
 })

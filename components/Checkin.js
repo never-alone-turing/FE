@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import normalize from 'react-native-normalize';
 
 class Checkin extends React.Component {
   constructor() {
@@ -35,15 +36,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#69c986',
-    height: 300,
-    width: 300,
-    marginBottom: 40, 
+    height: normalize(225),
+    width: normalize(225),
+    marginBottom: normalize(40), 
     borderColor: "#69c986",
-    borderWidth: 10,
+    borderWidth: normalize(10),
     borderRadius: 300 / 2
   },
   buttonText: {
-    fontSize: 35,
+    fontSize: normalize(25),
     textAlign: 'center'
   }
 })
@@ -54,11 +55,11 @@ const styles2 = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#f5a3af',
-    height: 300,
-    width: 300,
-    marginBottom: 40, 
+    height: normalize(225),
+    width: normalize(225),
+    marginBottom: normalize(40), 
     borderColor: "#f5a3af",
-    borderWidth: 10,
+    borderWidth: normalize(10),
     borderRadius: 300 / 2
   }
 })
