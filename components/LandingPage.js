@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Header } from 'react-native-elements';
 import normalize from 'react-native-normalize';
+import {apiCall} from '../API/API.js';
 
 const LandingPage = ({ navigation }) => {
   return (
@@ -12,6 +13,9 @@ const LandingPage = ({ navigation }) => {
       />
       <View style={styles.box}>
         <Text style={styles.text}>Choose Your Role:</Text>
+        {/* <TouchableOpacity style={styles.careTakerButton} onPress={() => apiCall()} >
+          <Text style={styles.buttonText}>Caretaker</Text>
+        </TouchableOpacity> */}
         <TouchableOpacity style={styles.careTakerButton} onPress={() => navigation.navigate('Caretaker')} >
           <Text style={styles.buttonText}>Caretaker</Text>
         </TouchableOpacity>
