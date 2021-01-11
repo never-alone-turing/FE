@@ -7,12 +7,13 @@ const Times = ({item, deleteTimer}) => {
   return (
       <TouchableOpacity style={styles.listItem} >
         <View style={styles.listItemView}>
-          <Button title='X' buttonStyle={styles.closeButton} titleStyle={styles.closeButtonText} onPress={() => deleteTimer(item.id)}/>
+          <View style={styles.closeButtonContainer}>
+            <Button type="outline" raised="true" title='X' buttonStyle={styles.closeButton} titleStyle={styles.closeButtonText} onPress={() => deleteTimer(item.id)}/>
+          </View>
           <Text style={item.response === "Answered" ? styles.answered : styles.unanswered}>Status: {item.response === "Answered" ? "Checked In" : "Not Checked In"}</Text>
           <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Name: </Text> {item.name}</Text>
           <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Time: </Text> {new Date(item.time).getHours().toString()}:{new Date(item.time).getMinutes().toString()}</Text>
           <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Window: </Text> {new Date(item.window).getHours().toString()}:{new Date(item.window).getMinutes().toString()}</Text>
-          
         </View>
       </TouchableOpacity>
   );
@@ -61,8 +62,13 @@ const styles = StyleSheet.create({
   closeButton: {
     fontSize: normalize(22),
   },
+  closeButtonContainer: {
+    width: normalize(40),
+    alignSelf: "flex-end",
+    marginBottom: normalize(5)
+  },
   closeButtonText: {
-    fontSize: normalize(30)
+    fontSize: normalize(20)
   }
 })
 
