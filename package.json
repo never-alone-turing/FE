@@ -25,7 +25,9 @@
     "react-navigation-stack": "^2.10.2"
   },
   "devDependencies": {
-    "@babel/core": "~7.9.0"
+    "@babel/core": "~7.9.0",
+    "@testing-library/react-native": "^7.1.0",
+    "react-test-renderer": "^17.0.1"
   },
   "scripts": {
     "start": "expo start",
