@@ -23,10 +23,19 @@ const styles = StyleSheet.create({
   listItem: {
     padding: normalize(15),
     marginHorizontal: normalize(5),
-    marginVertical: normalize(2),
+    marginVertical: normalize(5),
     backgroundColor: '#f8f8f8',
-    borderWidth: normalize(3),   
-    borderColor: "#eee"
+    // borderWidth: normalize(3),   
+    // borderColor: "#eee",
+    borderRadius: normalize(4),
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   answered: {
     padding: normalize(10),
@@ -61,6 +70,8 @@ const styles = StyleSheet.create({
   },
   closeButton: {
     fontSize: normalize(22),
+    shadowColor: "#000",
+    borderWidth: 0
   },
   closeButtonContainer: {
     width: normalize(40),
