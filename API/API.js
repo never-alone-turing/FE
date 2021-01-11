@@ -7,6 +7,7 @@ export const fetcher = {
         {
           allCheckins{
             id
+            response
             name
             time
             window
