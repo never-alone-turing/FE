@@ -3,34 +3,80 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import normalize from 'react-native-normalize';
 
 class Checkin extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      currentStyle: styles.mainBtn
+      isDisabled: true
     }
   }
 
-  changeDecider = () => {
-    if (this.state.currentStyle === styles.mainBtn) {
-      this.state.currentStyle = styles2.mainBtn
+  returnMinutes = (timePiece) => {
+    var hours = new Date(timePiece).getHours();
+    var minutes = new Date(timePiece).getMinutes();
+    return hours*60+minutes*1;
+  }
+
+  getMinutesNow = () => {
+    var timeNow = new Date();
+    return timeNow.getHours()*60+timeNow.getMinutes();
+  }
+
+  checkinable = () => {
+    console.log("this.props.task.response", this.props.task.id, this.props.task.response)
+    var now = this.getMinutesNow();
+    var start = this.returnMinutes(this.props.task.time);
+    var end = this.returnMinutes(this.props.task.window);
+    if (start > end) end += 1440;
+  
+    if ((now > start) && (now < end)) { 
+      return this.checkStatus()
     } else {
-      this.state.currentStyle = styles.mainBtn
+      return notAvailable.mainBtn 
+      this.setState({ isDisabled: true })
     }
-    this.forceUpdate()
+  }
+  
+  checkStatus = () => {
+    if(this.props.task.response === 'Answered') {
+      return checkedIn.mainBtn;
+      this.setState({ isDisabled: true })
+    } else {
+      return notCheckedIn.mainBtn;
+      this.setState({ isDisabled: false })
+    }
+  }
+
+  workAround = () => {
+    if (this.checkinable() === checkedIn.mainBtn) {
+      return {
+        disabled: true,
+        checkedStatus: "Completed!"
+      }
+    } else if (this.checkinable() === notCheckedIn.mainBtn) {
+      return {
+        disabled: false,
+        checkedStatus: 'Hold to check in'
+      }
+    } else {
+        return {
+          disabled: true,
+          checkedStatus: 'Not available to check in yet'
+        }
+    }
   }
 
   render() {
     return (
-      <TouchableOpacity style={this.state.currentStyle} onLongPress={() => this.changeDecider()}>
+      <TouchableOpacity dissabled={this.workAround().disabled} style={this.checkinable()} onLongPress={() => this.props.checkIn(this.props.task.id)}>
         <View>
-          <Text style={styles.buttonText}>Hold to complete task.</Text>
+          <Text style={checkedIn.buttonText}>{this.workAround().checkedStatus}</Text>
         </View>
       </TouchableOpacity>
     );
   }
 }
 
-const styles = StyleSheet.create({
+const checkedIn = StyleSheet.create({
   mainBtn: {
     display: 'flex',
     alignItems: 'center',
@@ -49,7 +95,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const styles2 = StyleSheet.create({
+const notCheckedIn = StyleSheet.create({
   mainBtn: {
     display: 'flex',
     alignItems: 'center',
@@ -59,6 +105,21 @@ const styles2 = StyleSheet.create({
     width: normalize(225),
     marginBottom: normalize(40), 
     borderColor: "#f5a3af",
+    borderWidth: normalize(10),
+    borderRadius: 300 / 2
+  }
+})
+
+const notAvailable = StyleSheet.create({
+  mainBtn: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#70cfff',
+    height: normalize(225),
+    width: normalize(225),
+    marginBottom: normalize(40), 
+    borderColor: "#70cfff",
     borderWidth: normalize(10),
     borderRadius: 300 / 2
   }

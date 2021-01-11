@@ -54,14 +54,11 @@ class AddTask extends React.Component {
   }
 
   onChangeTime = (event, selectedTime) => {
-    console.log('before', this.state.time) 
     const currentTime = selectedTime || new Date(1598051730000);
     this.setState({ time: currentTime })
-    console.log('after', this.state.time) 
   }
 
   onChangeWindow = (event, selectedTime) => {
-    console.log("what does selectedTime look like", selectedTime.getHours().toString(), typeof selectedTime) 
     const currentTime = selectedTime || new Date(1598051730000);
     this.setState({ window: currentTime })
   }

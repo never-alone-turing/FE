@@ -4,17 +4,33 @@ import { Header } from 'react-native-elements';
 import { ScrollView } from "react-native-gesture-handler";
 import Checkin from './Checkin';
 import normalize from 'react-native-normalize';
+import {fetcher} from '../API/API.js';
+
 
 class Receiver extends Component {
   constructor() {
     super();
     this.state = {
-      timers: [
-        {id: 1, category: "Wake-up", time: '7:00', window: '0:15', completed: "false"},
-        {id: 2, category: "Take meds", time: '12:00', window: '1:00'},
-        {id: 3, category: "go to sleep", time: '22:00', window: '1:00'}
-      ]
+      timers: []
     }
+  }
+
+  componentDidMount = async() => {
+    await this.updateTimes()
+  }
+  
+  updateTimes = async() => {
+    try {
+      const timers = await fetcher.allTimers()
+      this.setState({ timers: timers.['allCheckins'] })
+    } catch(error) {
+      console.log("error", error)
+    }
+  }
+
+  checkIn = async(id) => {
+    await fetcher.checkIn(id)
+    this.updateTimes()
   }
   
   render () {
@@ -29,10 +45,10 @@ class Receiver extends Component {
         <ScrollView snapToAlignment="center" decelerationRate="fast" horizontal >
           {this.state.timers.map((task) => {
             return <View style={styles.task} key={task.id}>
-              <Checkin />
+              <Checkin checkIn={this.checkIn} task={task}/>
               <View>
-                <Text style={styles.taskCategory}>{task.category}</Text>
-                <Text style={styles.taskTime}>{task.time}</Text>
+                <Text style={styles.taskCategory}>{task.name}</Text>
+                <Text style={styles.taskTime}>Time: {new Date(task.time).getHours().toString()}:{new Date(task.time).getMinutes().toString()}</Text>
               </View>
             </View>
           })}
