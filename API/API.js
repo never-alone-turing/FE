@@ -69,4 +69,31 @@ export const fetcher = {
     })
     .then(res => res.json())
   },
+
+  checkIn(timerId) {
+    return fetch("https://never-alone-backend.herokuapp.com/graphql", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query: `
+      mutation{
+        updateCheckin(
+          input:{
+            id: "${timerId}",
+            response: "Answered",
+          }
+        )
+        {
+          checkin{
+            id
+            response
+            category
+            userId
+            groupId
+          }
+        }
+      }`
+      }),
+    })
+    .then(res => res.json())
+  },
 } 
