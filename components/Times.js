@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column'
   },
   listItemName: {
-    fontSize: normalize(25)
+    fontSize: normalize(25),
+    marginVertical: normalize(3)
   },
   listItemTime: {
     fontSize: normalize(25),
