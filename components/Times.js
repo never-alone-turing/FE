@@ -1,15 +1,17 @@
 import React from "react";
 import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
+import normalize from 'react-native-normalize';
 
 const Times = ({item, deleteTimer}) => {
   return (
       <TouchableOpacity style={styles.listItem} >
         <View style={styles.listItemView}>
-          <Button title='X' style={styles.closeButton} onPress={() => deleteTimer(item.id)}/>
+          <Button title='X' buttonStyle={styles.closeButton} titleStyle={styles.closeButtonText} onPress={() => deleteTimer(item.id)}/>
+          <Text style={item.response === "Answered" ? styles.answered : styles.unanswered}>Status: {item.response === "Answered" ? "Checked In" : "Not Checked In"}</Text>
           <Text style={styles.listItemName}>Name: {item.name}</Text>
           <Text style={styles.listItemName}>Time: {new Date(item.time).getHours().toString()}:{new Date(item.time).getMinutes().toString()}</Text>
           <Text style={styles.listItemName}>Window: {new Date(item.window).getHours().toString()}:{new Date(item.window).getMinutes().toString()}</Text>
-          <Text style={item.response === "Answered" ? styles.answered : styles.unanswered}>Status: {item.response === "Answered" ? "Checked In" : "Not Checked In"}</Text>
+          
         </View>
       </TouchableOpacity>
   );
@@ -17,36 +19,43 @@ const Times = ({item, deleteTimer}) => {
 
 const styles = StyleSheet.create({
   listItem: {
-    padding: 15,
+    padding: normalize(15),
+    marginHorizontal: normalize(5),
+    marginVertical: normalize(2),
     backgroundColor: '#f8f8f8',
-    borderBottomWidth: 1,   
+    borderWidth: normalize(3),   
     borderColor: "#eee"
   },
   answered: {
-    padding: 15,
+    padding: normalize(15),
     backgroundColor: '#69c986',
-    borderBottomWidth: 1,   
-    borderColor: "#eee"
+    borderBottomWidth: normalize(1),   
+    borderColor: "#eee",
+    marginVertical: normalize(5),
+    fontSize: normalize(20)
   },
   unanswered: {
-    padding: 15,
+    padding: normalize(7),
     backgroundColor: '#f5a3af',
-    borderBottomWidth: 1,   
-    borderColor: "#eee"
+    borderBottomWidth: normalize(1),   
+    borderColor: "#eee",
+    marginVertical: normalize(5),
+    fontSize: normalize(20)
   },
   listItemView: {
     flexDirection: 'column'
   },
   listItemName: {
-    fontSize: 18
+    fontSize: normalize(25)
   },
   listItemTime: {
-    fontSize: 18,
+    fontSize: normalize(25),
   },
   closeButton: {
-    fontSize: 22,
-    color: 'firebrick',
-    backgroundColor: 'black'
+    fontSize: normalize(22),
+  },
+  closeButtonText: {
+    fontSize: normalize(30)
   }
 })
 
