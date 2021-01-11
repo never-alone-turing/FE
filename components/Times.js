@@ -2,7 +2,6 @@ import React from "react";
 import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
 
 const Times = ({item, deleteTimer}) => {
-  console.log('item', item)
   return (
       <TouchableOpacity style={styles.listItem} >
         <View style={styles.listItemView}>
