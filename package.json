@@ -4,6 +4,7 @@
     "@react-native-community/datetimepicker": "^3.0.9",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-native-picker/picker": "1.9.2",
+    "@testing-library/react": "^11.2.3",
     "expo": "~40.0.0",
     "expo-status-bar": "~1.0.3",
     "moment": "^2.29.1",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@babel/core": "~7.9.0",
     "@testing-library/react-native": "^7.1.0",
+    "cypress": "^6.2.1",
     "jest": "^26.4.2"
   },
   "scripts": {
@@ -40,6 +42,12 @@
   },
   "private": true,
   "jest": {
-    "preset": "react-native"
+    "setupFiles": [
+      "./node_modules/react-native-gesture-handler/jestSetup.js"
+    ],
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|@?react-navigation)"
+    ]
   }
 }
