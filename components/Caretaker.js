@@ -53,7 +53,7 @@ class Caretaker extends React.Component {
           leftComponent={{ icon: 'home', color: '#fff', size: normalize(40), onPress:() => this.props.navigation.navigate('Home')} }
           rightComponent={{ icon: 'add', color: '#fff', size: normalize(40), onPress:() => this.setIsVisible(true)} }
         />
-        <View>
+        <View style={{marginBottom: 160}}>
         <FlatList
             data={this.state.timers}
             renderItem={({ item }) => (
