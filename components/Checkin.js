@@ -6,18 +6,19 @@ class Checkin extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentStyle: styles.mainBtn
+      // currentStyle: styles.mainBtn,
+      isDisabled: true
     }
   }
 
-  changeDecider = () => {
-    if (this.state.currentStyle === styles.mainBtn) {
-      this.state.currentStyle = styles2.mainBtn
-    } else {
-      this.state.currentStyle = styles.mainBtn
-    }
-    this.forceUpdate()
-  }
+  // changeDecider = () => {
+  //   if (this.state.currentStyle === styles.mainBtn) {
+  //     this.state.currentStyle = styles2.mainBtn
+  //   } else {
+  //     this.state.currentStyle = styles.mainBtn
+  //   }
+  //   this.forceUpdate()
+  // }
 
   //
   returnMinutes = (timePiece) => {
@@ -54,26 +55,38 @@ class Checkin extends React.Component {
     if (start > end) end += 1440;
   
     if ((now > start) && (now < end)) { 
-      return styles2.mainBtn// your code here
+      return this.checkStatus()
     } else {
-      return styles.mainBtn // your code here
+      return notAvailable.mainBtn // your code here
+      this.setState({ isDisabled: true })// your code here
     }
+  }
+  
+  checkStatus = () => {
+    if(this.props.task.response === 'Answered') {
+      return checkedIn.mainBtn;
+      this.setState({ isDisabled: true })// your code here
+    } else {
+      return notCheckedIn.mainBtn;
+      this.setState({ isDisabled: false })// your code here 
+    }
+
   }
   //
 
 
   render() {
     return (
-      <TouchableOpacity style={this.checkinable()} onLongPress={() => this.checkinable()}>
+      <TouchableOpacity dissabled={this.state.isDisabled} style={this.checkinable()} onLongPress={() => this.props.checkIn(this.props.task.id)}>
         <View>
-          <Text style={styles.buttonText}>Hold to complete task.</Text>
+          <Text style={checkedIn.buttonText}>Hold to complete task.</Text>
         </View>
       </TouchableOpacity>
     );
   }
 }
 
-const styles = StyleSheet.create({
+const checkedIn = StyleSheet.create({
   mainBtn: {
     display: 'flex',
     alignItems: 'center',
@@ -92,7 +105,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const styles2 = StyleSheet.create({
+const notCheckedIn = StyleSheet.create({
   mainBtn: {
     display: 'flex',
     alignItems: 'center',
@@ -102,6 +115,21 @@ const styles2 = StyleSheet.create({
     width: normalize(225),
     marginBottom: normalize(40), 
     borderColor: "#f5a3af",
+    borderWidth: normalize(10),
+    borderRadius: 300 / 2
+  }
+})
+
+const notAvailable = StyleSheet.create({
+  mainBtn: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#70cfff',
+    height: normalize(225),
+    width: normalize(225),
+    marginBottom: normalize(40), 
+    borderColor: "#70cfff",
     borderWidth: normalize(10),
     borderRadius: 300 / 2
   }
