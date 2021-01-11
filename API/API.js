@@ -1,32 +1,3 @@
-// export const apiCall = (data) => {
-//   fetch("https://never-alone-backend.herokuapp.com/graphql", {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify({ query: `
-//     mutation
-//       {
-//         updateCheckin( 
-//           input: {
-//             id: "1",
-//             response: "Answered"
-//           }
-//         ) {
-//           checkin{
-//             id
-//             response
-//             name
-//             userId
-//             groupId
-//             time
-//             window
-//           }
-//         }
-//       }`
-//     }),
-//   })
-//   .then(res => res.json())
-//   .then(res => console.log(res.data));
-// }
 export const fetcher = {
   allTimers() {
     return fetch("https://never-alone-backend.herokuapp.com/graphql", {
@@ -45,7 +16,6 @@ export const fetcher = {
     })
     .then(res => res.json())
     .then(res => res.data)
-    // .then(res => console.log("res type", typeof res));
   },
 
   deleteTimer(checkinId) {
@@ -68,8 +38,6 @@ export const fetcher = {
       }),
     })
     .then(res => res.json())
-    // .then(res => res.data)
-    // .then(res => console.log("res type", typeof res));
   },
 
   addTimer(timer) {
@@ -100,64 +68,5 @@ export const fetcher = {
       }),
     })
     .then(res => res.json())
-    // .then(res => res.data)
-    // .then(res => console.log("res type", typeof res));
   },
-  // deleteTimer(userId) {
-  //   return fetch("https://never-alone-backend.herokuapp.com/graphql", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({ query: `
-  //     mutation
-  //       {
-  //         destroyUser(
-  //           input:{
-  //             id: "${userId}"
-  //           }
-  //         )
-  //       }`
-  //     }),
-  //   })
-  //   .then(res => res.json())
-  //   // .then(res => res.data)
-  //   // .then(res => console.log("res type", typeof res));
-  // },
-  // allTimers() {
-  //   return fetch("https://never-alone-backend.herokuapp.com/graphql", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({ query: `
-  //       {
-  //         allCheckins{
-  //           id
-  //           name
-  //           time
-  //           window
-  //         }
-  //       }`
-  //     }),
-  //   })
-  //   .then(res => res.json())
-  //   .then(res => res.data)
-  //   // .then(res => console.log("res type", typeof res));
-  // },
 } 
-// export const apiCall = () => {
-//   return fetch("https://never-alone-backend.herokuapp.com/graphql", {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify({ query: `
-//       {
-//         allCheckins{
-//           id
-//           name
-//           time
-//           window
-//         }
-//       }`
-//     }),
-//   })
-//   .then(res => res.json())
-//   .then(res => res.data['allCheckins'])
-//   .then(res => console.log("res type", typeof res));
-// }
