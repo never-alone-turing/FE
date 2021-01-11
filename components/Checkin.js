@@ -6,39 +6,15 @@ class Checkin extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      // currentStyle: styles.mainBtn,
       isDisabled: true
     }
   }
 
-  // changeDecider = () => {
-  //   if (this.state.currentStyle === styles.mainBtn) {
-  //     this.state.currentStyle = styles2.mainBtn
-  //   } else {
-  //     this.state.currentStyle = styles.mainBtn
-  //   }
-  //   this.forceUpdate()
-  // }
-
-  //
   returnMinutes = (timePiece) => {
     var hours = new Date(timePiece).getHours();
     var minutes = new Date(timePiece).getMinutes();
-    console.log("typeof hours", typeof hours)
-    console.log("typeof minutes", typeof minutes)
     return hours*60+minutes*1;
   }
-
-  // twentyFour = () => {
-  //   if(typeof timePiece === 'string') {
-  //     var time = timePiece.split(':');
-  //     return time[0]*60+time[1]*1;
-  //   }
-  // }
-  // function getMinutes(str) {
-  //   var time = str.split(':');
-  //   return time[0]*60+time[1]*1;
-  // }
 
   getMinutesNow = () => {
     var timeNow = new Date();
@@ -46,40 +22,54 @@ class Checkin extends React.Component {
   }
 
   checkinable = () => {
+    console.log("this.props.task.response", this.props.task.id, this.props.task.response)
     var now = this.getMinutesNow();
     var start = this.returnMinutes(this.props.task.time);
     var end = this.returnMinutes(this.props.task.window);
-    console.log("this.props.task", this.props.task)
-    console.log("start", start)
-    console.log("end", end)
     if (start > end) end += 1440;
   
     if ((now > start) && (now < end)) { 
       return this.checkStatus()
     } else {
-      return notAvailable.mainBtn // your code here
-      this.setState({ isDisabled: true })// your code here
+      return notAvailable.mainBtn 
+      this.setState({ isDisabled: true })
     }
   }
   
   checkStatus = () => {
     if(this.props.task.response === 'Answered') {
       return checkedIn.mainBtn;
-      this.setState({ isDisabled: true })// your code here
+      this.setState({ isDisabled: true })
     } else {
       return notCheckedIn.mainBtn;
-      this.setState({ isDisabled: false })// your code here 
+      this.setState({ isDisabled: false })
     }
-
   }
-  //
 
+  workAround = () => {
+    if (this.checkinable() === checkedIn.mainBtn) {
+      return {
+        disabled: true,
+        checkedStatus: "Completed!"
+      }
+    } else if (this.checkinable() === notCheckedIn.mainBtn) {
+      return {
+        disabled: false,
+        checkedStatus: 'Hold to check in'
+      }
+    } else {
+        return {
+          disabled: true,
+          checkedStatus: 'Not available to check in yet'
+        }
+    }
+  }
 
   render() {
     return (
-      <TouchableOpacity dissabled={this.state.isDisabled} style={this.checkinable()} onLongPress={() => this.props.checkIn(this.props.task.id)}>
+      <TouchableOpacity dissabled={this.workAround().disabled} style={this.checkinable()} onLongPress={() => this.props.checkIn(this.props.task.id)}>
         <View>
-          <Text style={checkedIn.buttonText}>Hold to complete task.</Text>
+          <Text style={checkedIn.buttonText}>{this.workAround().checkedStatus}</Text>
         </View>
       </TouchableOpacity>
     );
