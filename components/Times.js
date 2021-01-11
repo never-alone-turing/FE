@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import normalize from 'react-native-normalize';
+import { Button } from 'react-native-elements';
 
 const Times = ({item, deleteTimer}) => {
   return (
