@@ -27,6 +27,11 @@ class Receiver extends Component {
       console.log("error", error)
     }
   }
+
+  checkIn = async(id) => {
+    await fetcher.checkIn(id)
+    this.updateTimes()
+  }
   
   render () {
     return (
@@ -40,7 +45,7 @@ class Receiver extends Component {
         <ScrollView snapToAlignment="center" decelerationRate="fast" horizontal >
           {this.state.timers.map((task) => {
             return <View style={styles.task} key={task.id}>
-              <Checkin />
+              <Checkin checkIn={this.checkIn} task={task}/>
               <View>
                 <Text style={styles.taskCategory}>{task.name}</Text>
                 <Text style={styles.taskTime}>Time: {new Date(task.time).getHours().toString()}:{new Date(task.time).getMinutes().toString()}</Text>
