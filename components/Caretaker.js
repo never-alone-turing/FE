@@ -16,17 +16,6 @@ class Caretaker extends React.Component {
       modalVisible: false
     }
   }
-  // const [timers, editTimers] = useState([
-  //   {id: 1, name: "Wake-up", time: new Date(), window: new Date()},
-  //   {id: 2, name: "Take meds", time: new Date(), window: new Date()},
-  //   {id: 3, name: "go to sleep", time: new Date(), window: new Date()}
-  // ])
-
-  // async componentDidMount() {
-  //   let timers = await apiCall()
-  //   console.log("timers 27 caretaker", timers)
-  //   // this.setState({ timers: timers.allCheckins })
-  // }
 
   componentDidMount = () => {
     this.updateTimes()
@@ -37,52 +26,25 @@ class Caretaker extends React.Component {
       const timers = await fetcher.allTimers()
       console.log("timers 33 caretaker", timers['allCheckins'])
       this.setState({ timers: timers.['allCheckins'] })
-  
     } catch(error) {
       console.log("FUCK", error)
     }
   }
 
-// const Caretaker = ({history, navigation}) => {
-//   const [timers, editTimers] = useState([
-//     {id: 1, name: "Wake-up", time: new Date(), window: new Date()},
-//     {id: 2, name: "Take meds", time: new Date(), window: new Date()},
-//     {id: 3, name: "go to sleep", time: new Date(), window: new Date()}
-//   ])
-
   deleteTimer = async(id) => {
     console.log("Delete id", id, typeof id)
     await fetcher.deleteTimer(id)
     this.updateTimes()
-    this.forceUpdate()
   }
-
-  // deleteTimer = (id) => {
-  //   editTimers(prevTimers => {
-  //     return prevTimers.filter(timer => timer.id != id)
-  //   })
-  // }
 
   addTimer = async(timer) => {
     await fetcher.addTimer(timer)
     this.updateTimes()
-    // console.log('addTimer from Caretaker.js')
-    // editTimers(prevTimers => {
-    //   return [
-    //     {
-    //       id: Date.now(),
-    //       name: timer.name,
-    //       time: timer.time,
-    //       window: timer.window
-    //     }, ...prevTimers]
-    // })
   }
 
   setIsVisible = (visVal) => {
     this.setState({ modalVisible: visVal })
   }
-
-  // const [modalVisible, setIsVisible] = useState(false);
 
   render() {
     return (
