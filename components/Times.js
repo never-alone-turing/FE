@@ -10,7 +10,7 @@ const Times = ({item, deleteTimer}) => {
           <View style={styles.closeButtonContainer}>
             <Button type="outline" raised="true" title='X' buttonStyle={styles.closeButton} titleStyle={styles.closeButtonText} onPress={() => deleteTimer(item.id)}/>
           </View>
-          <Text style={item.response === "Answered" ? styles.answered : styles.unanswered}>Status: {item.response === "Answered" ? "Checked In" : "Not Checked In"}</Text>
+          <Text style={item.response === "Answered" ? styles.answered : styles.unanswered}><Text style={styles.listItemTitle}>Status: </Text>{item.response === "Answered" ? "Checked In" : "Not Checked In"}</Text>
           <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Name: </Text> {item.name}</Text>
           <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Time: </Text> {new Date(item.time).getHours().toString()}:{new Date(item.time).getMinutes().toString()}</Text>
           <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Window: </Text> {new Date(item.window).getHours().toString()}:{new Date(item.window).getMinutes().toString()}</Text>
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   answered: {
-    padding: normalize(10),
+    padding: normalize(5),
     backgroundColor: '#69c986',
     // borderBottomWidth: normalize(1),   
     // borderColor: "#eee",
@@ -56,14 +56,16 @@ const styles = StyleSheet.create({
     // fontWeight: "bold"
   },
   listItemTitle: {
-    fontWeight: "bold"
+    fontWeight: "bold",
+    
   },
   listItemView: {
     flexDirection: 'column'
   },
   listItemName: {
     fontSize: normalize(25),
-    marginVertical: normalize(3)
+    marginVertical: normalize(3),
+    marginLeft: normalize(5)
   },
   listItemTime: {
     fontSize: normalize(25),
