@@ -9,6 +9,7 @@ const Times = ({item, deleteTimer}) => {
           <Text style={styles.listItemName}>Name: {item.name}</Text>
           <Text style={styles.listItemName}>Time: {new Date(item.time).getHours().toString()}:{new Date(item.time).getMinutes().toString()}</Text>
           <Text style={styles.listItemName}>Window: {new Date(item.window).getHours().toString()}:{new Date(item.window).getMinutes().toString()}</Text>
+          <Text style={item.response === "Answered" ? styles.answered : styles.unanswered}>Status: {item.response === "Answered" ? "Checked In" : "Not Checked In"}</Text>
         </View>
       </TouchableOpacity>
   );
@@ -18,6 +19,18 @@ const styles = StyleSheet.create({
   listItem: {
     padding: 15,
     backgroundColor: '#f8f8f8',
+    borderBottomWidth: 1,   
+    borderColor: "#eee"
+  },
+  answered: {
+    padding: 15,
+    backgroundColor: '#69c986',
+    borderBottomWidth: 1,   
+    borderColor: "#eee"
+  },
+  unanswered: {
+    padding: 15,
+    backgroundColor: '#f5a3af',
     borderBottomWidth: 1,   
     borderColor: "#eee"
   },
