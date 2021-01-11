@@ -17,8 +17,8 @@ class Caretaker extends React.Component {
     }
   }
 
-  componentDidMount = () => {
-    this.updateTimes()
+  componentDidMount = async() => {
+    await this.updateTimes()
   }
   
   updateTimes = async() => {
