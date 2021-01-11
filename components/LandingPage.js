@@ -5,26 +5,6 @@ import { Button, Header } from 'react-native-elements';
 import ListItem from './ListItem';
 
 
-// const LandingPage = ({ history }) => {
-//   const [titles, chooseTitle] = useState([
-//     {title: "Caretaker", path: '/caretaker'},
-//     {title: "Care Receiver", path: '/carereceiver'}
-//   ])
-//   return (
-//     <>
-//       <Text style={styles.text}>Never Alone</Text>
-//         <FlatList
-//           style={styles.accountButton}
-//           data={titles}
-//           keyExtractor={(item) => item.title}
-//           renderItem={({ item }) =>
-//             <ListItem
-//               item={item} history={history} />}
-//         />
-//     </>
-//   );
-// }
-
 const LandingPage = ({ navigation }) => {
   return (
     <View>
