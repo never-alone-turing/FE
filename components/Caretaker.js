@@ -24,15 +24,13 @@ class Caretaker extends React.Component {
   updateTimes = async() => {
     try {
       const timers = await fetcher.allTimers()
-      console.log("timers 33 caretaker", timers['allCheckins'])
       this.setState({ timers: timers.['allCheckins'] })
     } catch(error) {
-      console.log("FUCK", error)
+      console.log("error", error)
     }
   }
 
   deleteTimer = async(id) => {
-    console.log("Delete id", id, typeof id)
     await fetcher.deleteTimer(id)
     this.updateTimes()
   }
