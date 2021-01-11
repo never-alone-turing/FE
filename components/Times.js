@@ -40,8 +40,8 @@ const styles = StyleSheet.create({
   answered: {
     padding: normalize(10),
     backgroundColor: '#69c986',
-    borderBottomWidth: normalize(1),   
-    borderColor: "#eee",
+    // borderBottomWidth: normalize(1),   
+    // borderColor: "#eee",
     marginVertical: normalize(5),
     fontSize: normalize(25),
     // fontWeight: "bold"
@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
   unanswered: {
     padding: normalize(10),
     backgroundColor: '#f5a3af',
-    borderBottomWidth: normalize(1),   
-    borderColor: "#eee",
+    // borderBottomWidth: normalize(1),   
+    // borderColor: "#eee",
     marginVertical: normalize(5),
     fontSize: normalize(25),
     // fontWeight: "bold"
@@ -71,12 +71,15 @@ const styles = StyleSheet.create({
   closeButton: {
     fontSize: normalize(22),
     shadowColor: "#000",
-    borderWidth: 0
+    borderWidth: 1,
+    borderRadius: 300 / 2,
+    
   },
   closeButtonContainer: {
     width: normalize(40),
     alignSelf: "flex-end",
-    marginBottom: normalize(5)
+    marginBottom: normalize(5),
+    paddingVertical: 2
   },
   closeButtonText: {
     fontSize: normalize(20)
