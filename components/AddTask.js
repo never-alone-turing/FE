@@ -20,7 +20,7 @@ class AddTask extends React.Component {
 
   validateForm = () => {
     if (this.state.name && this.state.viewTime && this.state.viewWindow ) {
-      this.props.addTimer(this.state)
+      this.props.addTask(this.state)
       this.resetBlankState()
       this.props.setIsVisible(false)
     } else {
