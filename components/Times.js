@@ -9,7 +9,7 @@ const Times = ({item, deleteTimer}) => {
       <TouchableOpacity style={styles.listItem} >
         <View style={styles.listItemView}>
           <View style={styles.closeButtonContainer}>
-            <Button type="outline" raised="true" title='X' buttonStyle={styles.closeButton} titleStyle={styles.closeButtonText} onPress={() => deleteTimer(item.id)}/>
+            <Button type="outline" raised={true} title='X' buttonStyle={styles.closeButton} titleStyle={styles.closeButtonText} onPress={() => deleteTimer(item.id)}/>
           </View>
           <Text style={item.response === "Answered" ? styles.answered : styles.unanswered}><Text style={styles.listItemTitle}>Status: </Text>{item.response === "Answered" ? "Checked In" : "Not Checked In"}</Text>
           <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Name: </Text> {item.name}</Text>
@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
     paddingVertical: 2
   },
   closeButtonText: {
+    color: "#CD5C5C",
     fontSize: normalize(20)
   }
 })
