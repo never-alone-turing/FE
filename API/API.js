@@ -1,5 +1,5 @@
 export const fetcher = {
-  allTimers() {
+  allTasks() {
     return fetch("https://never-alone-backend.herokuapp.com/graphql", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -19,7 +19,7 @@ export const fetcher = {
     .then(res => res.data)
   },
 
-  deleteTimer(checkinId) {
+  deleteTask(checkinId) {
     return fetch("https://never-alone-backend.herokuapp.com/graphql", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -41,7 +41,7 @@ export const fetcher = {
     .then(res => res.json())
   },
 
-  addTimer(timer) {
+  addTask(task) {
     return fetch("https://never-alone-backend.herokuapp.com/graphql", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -49,11 +49,11 @@ export const fetcher = {
       mutation{
         addCheckin(input:{
           response: "Pending",
-          time: "${timer.time}",
-          window: "${timer.window}",
+          time: "${task.time}",
+          window: "${task.window}",
           userId: "1",
           groupId: "1",
-          name: "${timer.name}"
+          name: "${task.name}"
           }
           ){
             checkin{
@@ -71,7 +71,7 @@ export const fetcher = {
     .then(res => res.json())
   },
 
-  checkIn(timerId) {
+  checkIn(taskId) {
     return fetch("https://never-alone-backend.herokuapp.com/graphql", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -79,7 +79,7 @@ export const fetcher = {
       mutation{
         updateCheckin(
           input:{
-            id: "${timerId}",
+            id: "${taskId}",
             response: "Answered",
           }
         )
