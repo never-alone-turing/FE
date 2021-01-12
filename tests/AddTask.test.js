@@ -10,12 +10,12 @@ DateTimePicker.mockImplementation((props) => (
 ));
 
 describe('AddTask', () => {
-  // it('should match the snapshot', () => {
-  //   const addtask = renderer.create(<AddTask/>).toJSON();
-  //   expect(addtask).toMatchSnapshot()
-  // });
-  test('Render LandingPage Properly', () => {
-    const {debug} = render(<AddTask/>);
-    debug();
+  it('should match the snapshot', () => {
+    const addtask = renderer.create(<AddTask/>).toJSON();
+    expect(addtask).toMatchSnapshot()
   });
+  // test('Render LandingPage Properly', () => {
+  //   const {debug} = render(<AddTask/>);
+  //   debug();
+  // });
 })
