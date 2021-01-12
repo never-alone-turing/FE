@@ -53,7 +53,7 @@ class Caretaker extends React.Component {
           leftComponent={{ icon: 'home', color: '#fff', size: normalize(40), onPress:() => this.props.navigation.navigate('Home')} }
           rightComponent={{ icon: 'add', color: '#fff', size: normalize(40), onPress:() => this.setIsVisible(true)} }
         />
-        <View style={{marginBottom: 160}}>
+        <View style={styles.viewArea}>
         <FlatList
             data={this.state.timers}
             renderItem={({ item }) => (
@@ -73,6 +73,12 @@ class Caretaker extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  viewArea: {
+    marginHorizontal: normalize(5),
+    marginBottom: normalize(225),
+    // borderBottomLeftRadius: normalize(50),
+    // borderColor:"#eee"
+  },
   listItem: {
     padding: 15,
     backgroundColor: '#f8f8f8',
