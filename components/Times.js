@@ -5,6 +5,7 @@ import { Button } from 'react-native-elements';
 
 const Times = ({item, deleteTimer}) => {
   return (
+    <View style={styles.viewContainer}>
       <TouchableOpacity style={styles.listItem} >
         <View style={styles.listItemView}>
           <View style={styles.closeButtonContainer}>
@@ -16,44 +17,37 @@ const Times = ({item, deleteTimer}) => {
           <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Window: </Text> {new Date(item.window).getHours().toString()}:{new Date(item.window).getMinutes().toString()}</Text>
         </View>
       </TouchableOpacity>
+      </View>
   );
 }
 
 const styles = StyleSheet.create({
   listItem: {
     padding: normalize(15),
-    marginHorizontal: normalize(5),
-    marginVertical: normalize(5),
+    marginHorizontal: normalize(7),
+    marginVertical: normalize(7),
     backgroundColor: '#f8f8f8',
-    // borderWidth: normalize(3),   
-    // borderColor: "#eee",
     borderRadius: normalize(4),
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.23,
+    shadowOpacity: 0.30,
     shadowRadius: 2.62,
     elevation: 4,
   },
   answered: {
     padding: normalize(5),
     backgroundColor: '#69c986',
-    // borderBottomWidth: normalize(1),   
-    // borderColor: "#eee",
     marginVertical: normalize(5),
     fontSize: normalize(25),
-    // fontWeight: "bold"
   },
   unanswered: {
     padding: normalize(10),
     backgroundColor: '#f5a3af',
-    // borderBottomWidth: normalize(1),   
-    // borderColor: "#eee",
     marginVertical: normalize(5),
     fontSize: normalize(25),
-    // fontWeight: "bold"
   },
   listItemTitle: {
     fontWeight: "bold",
