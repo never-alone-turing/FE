@@ -33,9 +33,9 @@ const styles = StyleSheet.create({
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.30,
+    shadowOpacity: 0.45,
     shadowRadius: 2.62,
-    elevation: 4,
+    elevation: 7,
   },
   answered: {
     padding: normalize(5),
