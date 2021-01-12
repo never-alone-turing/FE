@@ -9,14 +9,19 @@ describe('LandingPage', () => {
     expect(landingpage).toMatchSnapshot()
   });
 
-  // it('should be able to switch pages', () => {
-  //   let mockNav;
-  //   mockNav.navigate = jest.fn()
-  //   const { getByTestId } = render(<LandingPage navigation={mockNav}/>);
-  //   const caretakerButton = getByTestId("lp-caretaker-button")
-  //   fireEvent.press(caretakerButton)
-  //   expect(mockNav).toHaveBeenCalled()
-  // });
+  it('should be able to switch pages', () => {
+    let mockProps= {
+      navigation: {
+        navigate: jest.fn()
+      }
+    };
+    const { getByTestId } = render(<LandingPage navigation={mockProps.navigation}/>);
+    const caretakerButton = getByTestId("lp-caretaker-button")
+    const receiverButton = getByTestId("lp-receiver-button")
+    fireEvent.press(caretakerButton)
+    fireEvent.press(receiverButton)
+    expect(mockProps.navigation.navigate).toHaveBeenCalledTimes(2)
+  });
 
 })
 
