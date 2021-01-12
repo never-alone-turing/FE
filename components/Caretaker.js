@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Header } from 'react-native-elements';
 import { View, StyleSheet, FlatList, Modal } from "react-native";
-import Times from './Times';
+import Tasks from './Tasks';
 import AddTask from './AddTask';
 import normalize from 'react-native-normalize';
 import {fetcher} from '../API/API.js';
@@ -11,32 +11,32 @@ class Caretaker extends React.Component {
   constructor() {
     super();
     this.state = {
-      timers: [],
+      tasks: [],
       modalVisible: false
     }
   }
 
   componentDidMount = async() => {
-    await this.updateTimes()
+    await this.updateTasks()
   }
-  
-  updateTimes = async() => {
+
+  updateTasks = async() => {
     try {
-      const timers = await fetcher.allTimers()
-      this.setState({ timers: timers.['allCheckins'] })
+      const tasks = await fetcher.allTasks()
+      this.setState({ tasks: tasks.['allCheckins'] })
     } catch(error) {
       console.log("error", error)
     }
   }
 
-  deleteTimer = async(id) => {
-    await fetcher.deleteTimer(id)
-    this.updateTimes()
+  deleteTask = async(id) => {
+    await fetcher.deleteTask(id)
+    this.updateTasks()
   }
 
-  addTimer = async(timer) => {
-    await fetcher.addTimer(timer)
-    this.updateTimes()
+  addTask = async(task) => {
+    await fetcher.addTask(task)
+    this.updateTasks()
   }
 
   setIsVisible = (visVal) => {
@@ -54,18 +54,18 @@ class Caretaker extends React.Component {
         />
         <View style={styles.viewArea}>
         <FlatList
-            data={this.state.timers}
+            data={this.state.tasks}
             renderItem={({ item }) => (
-              <Times item={item} deleteTimer={this.deleteTimer}/>
+              <Tasks item={item} deleteTask={this.deleteTask}/>
             )}
             keyExtractor={(item) => item.id.toString()}
-          />  
+          />
         </View>
         <Modal visible={this.state.modalVisible} animationType="slide">
           <Button buttonStyle={styles.buttonStyle} title='Close Menu' titleStyle={styles.titleStyle} onPress={() => this.setIsVisible(!this.state.modalVisible)}></Button>
-          <AddTask addTimer={this.addTimer} setIsVisible={this.setIsVisible}/>
+          <AddTask addTask={this.addTask} setIsVisible={this.setIsVisible}/>
         </Modal>
-  
+
       </View>
     );
   }
@@ -89,8 +89,8 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   buttonStyle: {
-    backgroundColor: "black", 
-    width: "auto", 
+    backgroundColor: "black",
+    width: "auto",
     alignSelf: "flex-end",
     textAlign: "center",
     marginTop: 50,
