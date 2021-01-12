@@ -1,52 +1,84 @@
 import React from "react";
-import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import normalize from 'react-native-normalize';
+import { Button } from 'react-native-elements';
 
 const Times = ({item, deleteTimer}) => {
   return (
+    <View style={styles.viewContainer}>
       <TouchableOpacity style={styles.listItem} >
         <View style={styles.listItemView}>
-          <Button title='X' style={styles.closeButton} onPress={() => deleteTimer(item.id)}/>
-          <Text style={styles.listItemName}>Name: {item.name}</Text>
-          <Text style={styles.listItemName}>Time: {new Date(item.time).getHours().toString()}:{new Date(item.time).getMinutes().toString()}</Text>
-          <Text style={styles.listItemName}>Window: {new Date(item.window).getHours().toString()}:{new Date(item.window).getMinutes().toString()}</Text>
-          <Text style={item.response === "Answered" ? styles.answered : styles.unanswered}>Status: {item.response === "Answered" ? "Checked In" : "Not Checked In"}</Text>
+          <View style={styles.closeButtonContainer}>
+            <Button type="outline" raised="true" title='X' buttonStyle={styles.closeButton} titleStyle={styles.closeButtonText} onPress={() => deleteTimer(item.id)}/>
+          </View>
+          <Text style={item.response === "Answered" ? styles.answered : styles.unanswered}><Text style={styles.listItemTitle}>Status: </Text>{item.response === "Answered" ? "Checked In" : "Not Checked In"}</Text>
+          <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Name: </Text> {item.name}</Text>
+          <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Time: </Text> {new Date(item.time).getHours().toString()}:{new Date(item.time).getMinutes().toString()}</Text>
+          <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Window: </Text> {new Date(item.window).getHours().toString()}:{new Date(item.window).getMinutes().toString()}</Text>
         </View>
       </TouchableOpacity>
+      </View>
   );
 }
 
 const styles = StyleSheet.create({
   listItem: {
-    padding: 15,
+    padding: normalize(15),
+    marginHorizontal: normalize(7),
+    marginVertical: normalize(7),
     backgroundColor: '#f8f8f8',
-    borderBottomWidth: 1,   
-    borderColor: "#eee"
+    borderRadius: normalize(4),
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.45,
+    shadowRadius: 2.62,
+    elevation: 7,
   },
   answered: {
-    padding: 15,
+    padding: normalize(5),
     backgroundColor: '#69c986',
-    borderBottomWidth: 1,   
-    borderColor: "#eee"
+    marginVertical: normalize(5),
+    fontSize: normalize(25),
   },
   unanswered: {
-    padding: 15,
+    padding: normalize(10),
     backgroundColor: '#f5a3af',
-    borderBottomWidth: 1,   
-    borderColor: "#eee"
+    marginVertical: normalize(5),
+    fontSize: normalize(25),
+  },
+  listItemTitle: {
+    fontWeight: "bold",
+    
   },
   listItemView: {
     flexDirection: 'column'
   },
   listItemName: {
-    fontSize: 18
+    fontSize: normalize(25),
+    marginVertical: normalize(3),
+    marginLeft: normalize(5)
   },
   listItemTime: {
-    fontSize: 18,
+    fontSize: normalize(25),
   },
   closeButton: {
-    fontSize: 22,
-    color: 'firebrick',
-    backgroundColor: 'black'
+    fontSize: normalize(22),
+    shadowColor: "#000",
+    borderWidth: 1,
+    borderRadius: 300 / 2,
+    
+  },
+  closeButtonContainer: {
+    width: normalize(40),
+    alignSelf: "flex-end",
+    marginBottom: normalize(5),
+    paddingVertical: 2
+  },
+  closeButtonText: {
+    fontSize: normalize(20)
   }
 })
 
