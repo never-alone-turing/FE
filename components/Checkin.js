@@ -84,8 +84,8 @@ const checkedIn = StyleSheet.create({
     backgroundColor: '#69c986',
     height: normalize(225),
     width: normalize(225),
-    marginBottom: normalize(40), 
-    borderColor: "#69c986",
+    marginBottom: normalize(40),
+    borderColor: "#54a16b",
     borderWidth: normalize(10),
     borderRadius: 300 / 2
   },
@@ -103,8 +103,8 @@ const notCheckedIn = StyleSheet.create({
     backgroundColor: '#f5a3af',
     height: normalize(225),
     width: normalize(225),
-    marginBottom: normalize(40), 
-    borderColor: "#f5a3af",
+    marginBottom: normalize(40),
+    borderColor: "#ec465f",
     borderWidth: normalize(10),
     borderRadius: 300 / 2
   }
@@ -118,8 +118,8 @@ const notAvailable = StyleSheet.create({
     backgroundColor: '#70cfff',
     height: normalize(225),
     width: normalize(225),
-    marginBottom: normalize(40), 
-    borderColor: "#70cfff",
+    marginBottom: normalize(40),
+    borderColor: "#5AA6CC",
     borderWidth: normalize(10),
     borderRadius: 300 / 2
   }
