@@ -27,15 +27,15 @@ class Checkin extends React.Component {
     var start = this.returnMinutes(this.props.task.time);
     var end = this.returnMinutes(this.props.task.window);
     if (start > end) end += 1440;
-  
-    if ((now > start) && (now < end)) { 
+
+    if ((now > start) && (now < end)) {
       return this.checkStatus()
     } else {
-      return notAvailable.mainBtn 
+      return notAvailable.mainBtn
       this.setState({ isDisabled: true })
     }
   }
-  
+
   checkStatus = () => {
     if(this.props.task.response === 'Answered') {
       return checkedIn.mainBtn;
@@ -84,7 +84,7 @@ const checkedIn = StyleSheet.create({
     backgroundColor: '#69c986',
     height: normalize(225),
     width: normalize(225),
-    marginBottom: normalize(40), 
+    marginBottom: normalize(40),
     borderColor: "#69c986",
     borderWidth: normalize(10),
     borderRadius: 300 / 2
@@ -103,7 +103,7 @@ const notCheckedIn = StyleSheet.create({
     backgroundColor: '#f5a3af',
     height: normalize(225),
     width: normalize(225),
-    marginBottom: normalize(40), 
+    marginBottom: normalize(40),
     borderColor: "#f5a3af",
     borderWidth: normalize(10),
     borderRadius: 300 / 2
@@ -115,10 +115,10 @@ const notAvailable = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#70cfff',
+    backgroundColor: '#5AA6CC',
     height: normalize(225),
     width: normalize(225),
-    marginBottom: normalize(40), 
+    marginBottom: normalize(40),
     borderColor: "#70cfff",
     borderWidth: normalize(10),
     borderRadius: 300 / 2
