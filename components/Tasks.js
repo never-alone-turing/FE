@@ -3,13 +3,13 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import normalize from 'react-native-normalize';
 import { Button } from 'react-native-elements';
 
-const Times = ({item, deleteTimer}) => {
+const Tasks = ({item, deleteTask}) => {
   return (
     <View style={styles.viewContainer}>
       <TouchableOpacity style={styles.listItem} >
         <View style={styles.listItemView}>
           <View style={styles.closeButtonContainer}>
-            <Button type="outline" raised="true" title='X' buttonStyle={styles.closeButton} titleStyle={styles.closeButtonText} onPress={() => deleteTimer(item.id)}/>
+            <Button type="outline" raised="true" title='X' buttonStyle={styles.closeButton} titleStyle={styles.closeButtonText} onPress={() => deleteTask(item.id)}/>
           </View>
           <Text style={item.response === "Answered" ? styles.answered : styles.unanswered}><Text style={styles.listItemTitle}>Status: </Text>{item.response === "Answered" ? "Checked In" : "Not Checked In"}</Text>
           <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Name: </Text> {item.name}</Text>
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   listItemTitle: {
     fontWeight: "bold",
-    
+
   },
   listItemView: {
     flexDirection: 'column'
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     borderWidth: 1,
     borderRadius: 300 / 2,
-    
+
   },
   closeButtonContainer: {
     width: normalize(40),
@@ -82,4 +82,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Times;
+export default Tasks;
