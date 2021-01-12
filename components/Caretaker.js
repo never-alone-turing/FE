@@ -1,10 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import { Button, Header } from 'react-native-elements';
 import { View, StyleSheet, FlatList, Modal } from "react-native";
 import Times from './Times';
 import AddTask from './AddTask';
 import normalize from 'react-native-normalize';
-import { ScrollView } from "react-native-gesture-handler";
 import {fetcher} from '../API/API.js';
 
 
@@ -76,8 +75,6 @@ const styles = StyleSheet.create({
   viewArea: {
     marginHorizontal: normalize(5),
     marginBottom: normalize(225),
-    // borderBottomLeftRadius: normalize(50),
-    // borderColor:"#eee"
   },
   listItem: {
     padding: 15,
