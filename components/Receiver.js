@@ -11,18 +11,18 @@ class Receiver extends Component {
   constructor() {
     super();
     this.state = {
-      timers: []
+      tasks: []
     }
   }
 
   componentDidMount = async() => {
-    await this.updateTimes()
+    await this.updateTasks()
   }
-  
-  updateTimes = async() => {
+
+  updateTasks = async() => {
     try {
-      const timers = await fetcher.allTimers()
-      this.setState({ timers: timers.['allCheckins'] })
+      const tasks = await fetcher.allTasks()
+      this.setState({ tasks: tasks.['allCheckins'] })
     } catch(error) {
       console.log("error", error)
     }
@@ -30,9 +30,9 @@ class Receiver extends Component {
 
   checkIn = async(id) => {
     await fetcher.checkIn(id)
-    this.updateTimes()
+    this.updateTasks()
   }
-  
+
   render () {
     return (
       <SafeAreaView>
@@ -43,7 +43,7 @@ class Receiver extends Component {
             leftComponent={{ icon: 'home', color: '#fff', size: normalize(40), onPress:() => this.props.navigation.navigate('Home')} }
           />
         <ScrollView snapToAlignment="center" decelerationRate="fast" horizontal >
-          {this.state.timers.map((task) => {
+          {this.state.tasks.map((task) => {
             return <View style={styles.task} key={task.id}>
               <Checkin checkIn={this.checkIn} task={task}/>
               <View>
