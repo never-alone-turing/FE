@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import { Header } from 'react-native-elements';
 import normalize from 'react-native-normalize';
 
@@ -12,9 +12,11 @@ const LandingPage = ({ navigation }) => {
       />
       <View style={styles.box}>
         <Text style={styles.text}>Choose Your Role:</Text>
-        <TouchableOpacity style={styles.careTakerButton} onPress={() => navigation.navigate('Caretaker')} >
-          <Text style={styles.buttonText}>Caretaker</Text>
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.careTakerButton} onPress={() => navigation.navigate('Caretaker')} >
+          <ImageBackground source={require('../images/caregiver.jpg')} style={styles.backgroundImage} >
+            <Text style={styles.buttonText}>Caretaker</Text>
+            < /ImageBackground>
+          </TouchableOpacity>
         <TouchableOpacity style={styles.receiverButton} onPress={() => navigation.navigate('Receiver')} >
           <Text style={styles.buttonText}>Receiver</Text>
         </TouchableOpacity>
@@ -69,6 +71,10 @@ const styles = StyleSheet.create({
    alignSelf: "stretch",
    textAlign: "center",
    margin: normalize(20)
+ },
+
+ backgroundImage: {
+   borderColor: 'black'
  }
 })
 
