@@ -13,12 +13,14 @@ const LandingPage = ({ navigation }) => {
       <View style={styles.box}>
         <Text style={styles.text}>Choose Your Role:</Text>
           <TouchableOpacity style={styles.careTakerButton} onPress={() => navigation.navigate('Caretaker')} >
-          <ImageBackground source={require('../images/caregiver.jpg')} style={styles.backgroundImage} >
+          <ImageBackground source={require('../images/caretaker.jpg')} style={styles.backgroundImage} >
             <Text style={styles.buttonText}>Caretaker</Text>
             < /ImageBackground>
           </TouchableOpacity>
         <TouchableOpacity style={styles.receiverButton} onPress={() => navigation.navigate('Receiver')} >
-          <Text style={styles.buttonText}>Receiver</Text>
+          <ImageBackground source={require('../images/receiver.jpg')} style={styles.backgroundImage} >
+            <Text style={styles.buttonText}>Receiver</Text>
+          < /ImageBackground>
         </TouchableOpacity>
       </View>
     </View>
