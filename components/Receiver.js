@@ -18,7 +18,7 @@ class Receiver extends Component {
   componentDidMount = async() => {
     await this.updateTimes()
   }
-  
+
   updateTimes = async() => {
     try {
       const timers = await fetcher.allTimers()
@@ -32,13 +32,13 @@ class Receiver extends Component {
     await fetcher.checkIn(id)
     this.updateTimes()
   }
-  
+
   render () {
     return (
       <SafeAreaView>
       <View style={styles.careReceiver}>
           <Header
-            containerStyle={{ backgroundColor: 'black', justifyContent: 'space-around', paddingBottom: normalize(10) }}
+            containerStyle={{ backgroundColor: '#483d8b', justifyContent: 'space-around', paddingBottom: normalize(10) }}
             centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: normalize(30), fontWeight: "bold" } }}
             leftComponent={{ icon: 'home', color: '#fff', size: normalize(40), onPress:() => this.props.navigation.navigate('Home')} }
           />
@@ -58,7 +58,7 @@ class Receiver extends Component {
     )
   }
 }
-  
+
 const styles = StyleSheet.create({
   careReceiver: {
     display: 'flex',
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     padding: normalize(30),
     borderWidth: normalize(3),
     borderColor: "black",
-    borderRadius: normalize(10), 
+    borderRadius: normalize(10),
     backgroundColor: '#E0E0E0',
   },
   taskCategory: {

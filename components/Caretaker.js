@@ -20,7 +20,7 @@ class Caretaker extends React.Component {
   componentDidMount = async() => {
     await this.updateTimes()
   }
-  
+
   updateTimes = async() => {
     try {
       const timers = await fetcher.allTimers()
@@ -48,7 +48,7 @@ class Caretaker extends React.Component {
     return (
       <View>
         <Header
-          containerStyle={{ backgroundColor: 'black', justifyContent: 'space-between' }}
+          containerStyle={{ backgroundColor: '#483d8b', justifyContent: 'space-between' }}
           centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: normalize(30), fontWeight: "bold" } }}
           leftComponent={{ icon: 'home', color: '#fff', size: normalize(40), onPress:() => this.props.navigation.navigate('Home')} }
           rightComponent={{ icon: 'add', color: '#fff', size: normalize(40), onPress:() => this.setIsVisible(true)} }
@@ -60,13 +60,13 @@ class Caretaker extends React.Component {
               <Times item={item} deleteTimer={this.deleteTimer}/>
             )}
             keyExtractor={(item) => item.id.toString()}
-          />  
+          />
         </View>
         <Modal visible={this.state.modalVisible} animationType="slide">
           <Button buttonStyle={styles.buttonStyle} title='Close Menu' titleStyle={styles.titleStyle} onPress={() => this.setIsVisible(!this.state.modalVisible)}></Button>
           <AddTask addTimer={this.addTimer} setIsVisible={this.setIsVisible}/>
         </Modal>
-  
+
       </View>
     );
   }
@@ -86,8 +86,8 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   buttonStyle: {
-    backgroundColor: "black", 
-    width: "auto", 
+    backgroundColor: "#483d8b",
+    width: "auto",
     alignSelf: "flex-end",
     textAlign: "center",
     marginTop: 50,

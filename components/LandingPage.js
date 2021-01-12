@@ -7,7 +7,7 @@ const LandingPage = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Header
-        containerStyle={{ backgroundColor: 'black', justifyContent: 'space-around', paddingBottom: 10}}
+        containerStyle={{ backgroundColor: '#483d8b', justifyContent: 'space-around', paddingBottom: 10}}
         centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: normalize(30), fontWeight: "bold" } }}
       />
       <View style={styles.box}>
