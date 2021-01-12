@@ -28,11 +28,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  box: {
-    // width: normalize(300),
-    // height: normalize(300),
-    // ** I DON'T THINK WE ACTUALLY NEED THIS DIV **
-  },
+  
   text: {
    color: 'black',
    fontSize: normalize(30),
