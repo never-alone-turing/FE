@@ -1,10 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import { Button, Header } from 'react-native-elements';
 import { View, StyleSheet, FlatList, Modal } from "react-native";
 import Times from './Times';
 import AddTask from './AddTask';
 import normalize from 'react-native-normalize';
-import { ScrollView } from "react-native-gesture-handler";
 import {fetcher} from '../API/API.js';
 
 
@@ -48,12 +47,12 @@ class Caretaker extends React.Component {
     return (
       <View>
         <Header
-          containerStyle={{ backgroundColor: 'black', justifyContent: 'space-between' }}
+          containerStyle={{ backgroundColor: '#483D8B', justifyContent: 'space-between' }}
           centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: normalize(30), fontWeight: "bold" } }}
           leftComponent={{ icon: 'home', color: '#fff', size: normalize(40), onPress:() => this.props.navigation.navigate('Home')} }
           rightComponent={{ icon: 'add', color: '#fff', size: normalize(40), onPress:() => this.setIsVisible(true)} }
         />
-        <View style={{marginBottom: 160}}>
+        <View style={styles.viewArea}>
         <FlatList
             data={this.state.timers}
             renderItem={({ item }) => (
@@ -73,6 +72,10 @@ class Caretaker extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  viewArea: {
+    marginHorizontal: normalize(5),
+    marginBottom: normalize(225),
+  },
   listItem: {
     padding: 15,
     backgroundColor: '#f8f8f8',
@@ -86,8 +89,8 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   buttonStyle: {
-    backgroundColor: "black", 
-    width: "auto", 
+    backgroundColor: "#483D8B",
+    width: "auto",
     alignSelf: "flex-end",
     textAlign: "center",
     marginTop: 50,

@@ -93,8 +93,8 @@ const styles = StyleSheet.create({
     fontSize: 25
   },
   buttonStyle: {
-    backgroundColor: "black", 
-    width: 200, 
+    backgroundColor: "#483d8b", 
+    width: 200,
     alignSelf: "center"
   },
   titleStyle: {
