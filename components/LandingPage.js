@@ -15,7 +15,7 @@ const LandingPage = ({ navigation }) => {
         <TouchableOpacity style={styles.careTakerButton} testID="lp-caretaker-button" onPress={() => navigation.navigate('Caretaker')} >
           <Text style={styles.buttonText}>Caretaker</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.receiverButton} onPress={() => navigation.navigate('Receiver')} >
+        <TouchableOpacity style={styles.receiverButton} testID="lp-receiver-button" onPress={() => navigation.navigate('Receiver')} >
           <Text style={styles.buttonText}>Receiver</Text>
         </TouchableOpacity>
       </View>
