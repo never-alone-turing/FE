@@ -47,7 +47,7 @@ class Caretaker extends React.Component {
     return (
       <View>
         <Header
-          containerStyle={{ backgroundColor: 'black', justifyContent: 'space-between' }}
+          containerStyle={{ backgroundColor: '#483D8B', justifyContent: 'space-between' }}
           centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: normalize(30), fontWeight: "bold" } }}
           leftComponent={{ icon: 'home', color: '#fff', size: normalize(40), onPress:() => this.props.navigation.navigate('Home')} }
           rightComponent={{ icon: 'add', color: '#fff', size: normalize(40), onPress:() => this.setIsVisible(true)} }
@@ -89,8 +89,8 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   buttonStyle: {
-    backgroundColor: "black", 
-    width: "auto", 
+    backgroundColor: "#483D8B",
+    width: "auto",
     alignSelf: "flex-end",
     textAlign: "center",
     marginTop: 50,
