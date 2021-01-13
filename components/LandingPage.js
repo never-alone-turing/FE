@@ -5,19 +5,19 @@ import normalize from 'react-native-normalize';
 
 const LandingPage = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="lp-view">
       <Header
         containerStyle={{ backgroundColor: '#483D8B', justifyContent: 'space-around', paddingBottom: 10}}
         centerComponent={{ text: 'Never Alone', style: { color: '#fff', fontSize: normalize(30), fontWeight: "bold" } }}
       />
       <View style={styles.box}>
         <Text style={styles.text}>Choose Your Role:</Text>
-        <TouchableOpacity style={styles.careTakerButton} onPress={() => navigation.navigate('Caretaker')} >
+        <TouchableOpacity style={styles.careTakerButton} testID="lp-caretaker-button" onPress={() => navigation.navigate('Caretaker')} >
           <ImageBackground source={require('../images/caretaker.jpg')} style={styles.backgroundImage} >
             <Text style={styles.buttonText}>Caretaker</Text>
           < /ImageBackground>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.receiverButton} onPress={() => navigation.navigate('Receiver')} >
+        <TouchableOpacity style={styles.receiverButton} testID="lp-receiver-button" onPress={() => navigation.navigate('Receiver')} >
           <ImageBackground source={require('../images/receiver.jpg')} style={styles.backgroundImage} >
             <Text style={styles.buttonText}>Receiver</Text>
           < /ImageBackground>

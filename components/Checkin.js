@@ -22,7 +22,7 @@ class Checkin extends React.Component {
   }
 
   checkinable = () => {
-    console.log("this.props.task.response", this.props.task.id, this.props.task.response)
+    // console.log("this.props.task.response", this.props.task.id, this.props.task.response)
     var now = this.getMinutesNow();
     var start = this.returnMinutes(this.props.task.time);
     var end = this.returnMinutes(this.props.task.window);
@@ -58,6 +58,7 @@ class Checkin extends React.Component {
         checkedStatus: 'Hold to check in'
       }
     } else {
+      console.log("this.checkinable()", this.checkinable())
         return {
           disabled: true,
           checkedStatus: 'Not available to check in yet'
@@ -67,7 +68,7 @@ class Checkin extends React.Component {
 
   render() {
     return (
-      <TouchableOpacity dissabled={this.workAround().disabled} style={this.checkinable()} onLongPress={() => this.props.checkIn(this.props.task.id)}>
+      <TouchableOpacity dissabled={this.workAround().disabled} testID={`checkin-${this.props.task.id}`} style={this.checkinable()} onLongPress={() => this.props.checkIn(this.props.task.id)}>
         <View>
           <Text style={checkedIn.buttonText}>{this.workAround().checkedStatus}</Text>
         </View>

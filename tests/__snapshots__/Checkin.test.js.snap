@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkin should match the snapshot 1`] = `
+<View
+  accessible={true}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#70cfff",
+      "borderColor": "#5AA6CC",
+      "borderRadius": 150,
+      "borderWidth": 20,
+      "display": "flex",
+      "height": 450,
+      "justifyContent": "center",
+      "marginBottom": 80,
+      "opacity": 1,
+      "width": 450,
+    }
+  }
+  testID="checkin-1"
+>
+  <View>
+    <Text
+      style={
+        Object {
+          "fontSize": 50,
+          "textAlign": "center",
+        }
+      }
+    >
+      Not available to check in yet
+    </Text>
+  </View>
+</View>
+`;
