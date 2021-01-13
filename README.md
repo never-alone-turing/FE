@@ -6,6 +6,11 @@
   A Turing School Mod 4 Project
 </p>
 
+[![Contributors][contributors-shield]](https://github.com/never-alone-turing/FE/graphs/contributors)
+[![Forks][forks-shield]](https://github.com/never-alone-turing/FE/network/members)
+[![Issues][issues-shield]](https://github.com/never-alone-turing/FE/issues)
+[![Stars][stars-shield]](https://github.com/never-alone-turing/FE)
+
 
 # About The Project
 
@@ -52,3 +57,13 @@ Working on a project that we chose, rather than one that was assigned was defini
 [Kathryn Jackson - Developer](https://github.com/kathrynljackson)
 
 [Naomi Ware - Developer](https://github.com/nware1066)
+
+[contributors-shield]: https://img.shields.io/github/contributors/never-alone-turing/FE.svg?style=flat-square
+[contributors-url]: https://github.com/holladayian/never-alone-turing/FE
+[forks-shield]: https://img.shields.io/github/forks/never-alone-turing/FE.svg?style=flat-square
+[forks-url]: https://github.com/never-alone-turing/FE/network/members
+[stars-shield]: https://img.shields.io/github/stars/never-alone-turing/FE.svg?style=flat-square 
+[stars-url]: https://github.com/never-alone-turing/FE/stargazers
+[issues-shield]: https://img.shields.io/github/issues/never-alone-turing/FE.svg?style=flat-square
+[issues-url]: https://github.com/never-alone-turing/FE/issues
+[product-screenshot]: images/screenshot.png
