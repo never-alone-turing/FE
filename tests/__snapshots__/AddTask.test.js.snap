@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddTask should match the snapshot 1`] = `
+<View>
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    placeholder="Name"
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "fontSize": 25,
+        "height": 60,
+        "padding": 8,
+      }
+    }
+    underlineColorAndroid="transparent"
+  />
+  <TextInput
+    allowFontScaling={true}
+    onFocus={[Function]}
+    placeholder="Time"
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "fontSize": 25,
+        "height": 60,
+        "padding": 8,
+      }
+    }
+    underlineColorAndroid="transparent"
+  />
+  <TextInput
+    allowFontScaling={true}
+    onFocus={[Function]}
+    placeholder="Window"
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "fontSize": 25,
+        "height": 60,
+        "padding": 8,
+      }
+    }
+    underlineColorAndroid="transparent"
+  />
+  <View
+    style={
+      Object {
+        "borderRadius": 3,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      accessibilityRole="button"
+      accessibilityState={
+        Object {
+          "busy": false,
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": "center",
+            "backgroundColor": "#483d8b",
+            "borderColor": "#2089dc",
+            "borderRadius": 3,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "padding": 8,
+            "width": 200,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "white",
+              "fontSize": 30,
+              "paddingVertical": 1,
+              "textAlign": "center",
+            }
+          }
+        >
+          Add Item
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

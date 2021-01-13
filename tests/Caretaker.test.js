@@ -10,31 +10,44 @@ DateTimePicker.mockImplementation((props) => (
 
 import {fetcher} from '../API/API.js';
 
-jest.mock('../API/API.js', () => jest.fn());
-fetcher.allTimers.mockImplementation( () => {
-  return allCheckins = [{
-    id: 1,
-    response: "Answered",
-    name: "test",
-    time: new Date(0),
-    window: new Date(0),
-  }]
+const mockReceiverAllTimers = jest.fn();
+jest.mock('../API/API.js', async() => {
+  return await jest.fn().mockImplementation(() => {
+    return allCheckins = [{
+      id: 1,
+      response: "Answered",
+      name: "test",
+      time: new Date(0),
+      window: new Date(0),
+    }]
+  })
 })
+
+// jest.mock('../API/API.js', () => jest.fn());
+// fetcher.allTimers.mockImplementation( () => {
+//   return allCheckins = [{
+//     id: 1,
+//     response: "Answered",
+//     name: "test",
+//     time: new Date(0),
+//     window: new Date(0),
+//   }]
+// })
 // jest.mock('../API/API.js', () => {
 //   return fetcher.allTimers();
 // })
 
-jest.mock("../node_modules/react-native/Libraries/LogBox/Data/LogBoxData.js", () => {
-    return {
-      handleException: (...args) => {
-        return;
-      },
-    };
-  })
+// jest.mock("../node_modules/react-native/Libraries/LogBox/Data/LogBoxData.js", () => {
+//     return {
+//       handleException: (...args) => {
+//         return;
+//       },
+//     };
+//   })
 
 describe('Caretaker', () => {
-  it('should match the snapshot', () => {
-    const caretaker = renderer.create(<Caretaker />).toJSON()
+  it('should match the snapshot', async() => {
+    const caretaker = await renderer.create(<Caretaker />).toJSON()
     expect(caretaker).toMatchSnapshot()
   })
 })

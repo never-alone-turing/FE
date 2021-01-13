@@ -1,0 +1,212 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Times should match the snapshot 1`] = `
+<View>
+  <View
+    accessible={true}
+    focusable={false}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#f8f8f8",
+        "borderRadius": 8,
+        "elevation": 7,
+        "marginHorizontal": 14,
+        "marginVertical": 14,
+        "opacity": 1,
+        "padding": 30,
+        "shadowColor": "#000",
+        "shadowOffset": Object {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 0.45,
+        "shadowRadius": 2.62,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignSelf": "flex-end",
+            "marginBottom": 10,
+            "paddingVertical": 2,
+            "width": 80,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "borderRadius": 150,
+              "overflow": "visible",
+              "shadowColor": "rgba(0,0,0, .4)",
+              "shadowOffset": Object {
+                "height": 1,
+                "width": 1,
+              },
+              "shadowOpacity": 1,
+              "shadowRadius": 1,
+            }
+          }
+        >
+          <View
+            accessibilityRole="button"
+            accessibilityState={
+              Object {
+                "busy": false,
+                "disabled": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "transparent",
+                  "borderColor": "#2089dc",
+                  "borderRadius": 150,
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "fontSize": 44,
+                  "justifyContent": "center",
+                  "padding": 8,
+                  "shadowColor": "#000",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#CD5C5C",
+                    "fontSize": 40,
+                    "paddingVertical": 1,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                X
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <Text
+        style={
+          Object {
+            "backgroundColor": "#69c986",
+            "fontSize": 50,
+            "marginVertical": 10,
+            "padding": 10,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Status: 
+        </Text>
+        Checked In
+      </Text>
+      <Text
+        style={
+          Object {
+            "fontSize": 50,
+            "marginLeft": 10,
+            "marginVertical": 6,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Name: 
+        </Text>
+         
+      </Text>
+      <Text
+        style={
+          Object {
+            "fontSize": 50,
+            "marginLeft": 10,
+            "marginVertical": 6,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Time: 
+        </Text>
+         
+        14
+        :
+        0
+      </Text>
+      <Text
+        style={
+          Object {
+            "fontSize": 50,
+            "marginLeft": 10,
+            "marginVertical": 6,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Window: 
+        </Text>
+         
+        14
+        :
+        0
+      </Text>
+    </View>
+  </View>
+</View>
+`;

@@ -13,7 +13,7 @@ exports[`LandingPage should match the snapshot 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "black",
+        "backgroundColor": "#483D8B",
         "borderBottomColor": "#f2f2f2",
         "borderBottomWidth": 0.5,
         "flexDirection": "row",
@@ -121,19 +121,51 @@ exports[`LandingPage should match the snapshot 1`] = `
       }
       testID="lp-caretaker-button"
     >
-      <Text
+      <View
+        accessibilityIgnoresInvertColors={true}
         style={
           Object {
-            "alignSelf": "stretch",
-            "color": "black",
-            "fontSize": 100,
-            "margin": 40,
-            "textAlign": "center",
+            "borderColor": "black",
           }
         }
       >
-        Caretaker
-      </Text>
+        <Image
+          source={
+            Object {
+              "testUri": "../../../images/caretaker.jpg",
+            }
+          }
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": undefined,
+                "width": undefined,
+              },
+              undefined,
+            ]
+          }
+        />
+        <Text
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "color": "black",
+              "fontSize": 100,
+              "margin": 40,
+              "textAlign": "center",
+            }
+          }
+        >
+          Caretaker
+        </Text>
+      </View>
     </View>
     <View
       accessible={true}
@@ -158,20 +190,53 @@ exports[`LandingPage should match the snapshot 1`] = `
           "padding": 20,
         }
       }
+      testID="lp-receiver-button"
     >
-      <Text
+      <View
+        accessibilityIgnoresInvertColors={true}
         style={
           Object {
-            "alignSelf": "stretch",
-            "color": "black",
-            "fontSize": 100,
-            "margin": 40,
-            "textAlign": "center",
+            "borderColor": "black",
           }
         }
       >
-        Receiver
-      </Text>
+        <Image
+          source={
+            Object {
+              "testUri": "../../../images/receiver.jpg",
+            }
+          }
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": undefined,
+                "width": undefined,
+              },
+              undefined,
+            ]
+          }
+        />
+        <Text
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "color": "black",
+              "fontSize": 100,
+              "margin": 40,
+              "textAlign": "center",
+            }
+          }
+        >
+          Receiver
+        </Text>
+      </View>
     </View>
   </View>
 </View>
