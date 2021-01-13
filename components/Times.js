@@ -12,9 +12,9 @@ const Times = ({item, deleteTimer}) => {
             <Button type="outline" raised={true} title='X' buttonStyle={styles.closeButton} titleStyle={styles.closeButtonText} onPress={() => deleteTimer(item.id)}/>
           </View>
           <Text style={item.response === "Answered" ? styles.answered : styles.unanswered}><Text style={styles.listItemTitle}>Status: </Text>{item.response === "Answered" ? "Checked In" : "Not Checked In"}</Text>
-          <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Name: </Text> {item.name}</Text>
+          <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Title: </Text> {item.name}</Text>
           <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Time: </Text> {new Date(item.time).getHours().toString()}:{new Date(item.time).getMinutes().toString()}</Text>
-          <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Window: </Text> {new Date(item.window).getHours().toString()}:{new Date(item.window).getMinutes().toString()}</Text>
+          <Text style={styles.listItemName}><Text style={styles.listItemTitle}>Complete By: </Text> {new Date(item.window).getHours().toString()}:{new Date(item.window).getMinutes().toString()}</Text>
         </View>
       </TouchableOpacity>
       </View>

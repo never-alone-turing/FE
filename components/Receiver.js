@@ -48,7 +48,8 @@ class Receiver extends Component {
               <Checkin checkIn={this.checkIn} task={task}/>
               <View>
                 <Text style={styles.taskCategory}>{task.name}</Text>
-                <Text style={styles.taskTime}>Time: {new Date(task.time).getHours().toString()}:{new Date(task.time).getMinutes().toString()}</Text>
+                <Text style={styles.taskTime}><Text style={styles.taskTitle}>Time: </Text>{new Date(task.time).getHours().toString()}:{new Date(task.time).getMinutes().toString()}</Text>
+                <Text style={styles.taskTime}><Text style={styles.taskTitle}>Finish By: </Text>{new Date(task.window).getHours().toString()}:{new Date(task.time).getMinutes().toString()}</Text>
               </View>
             </View>
           })}
@@ -92,7 +93,10 @@ const styles = StyleSheet.create({
   },
   taskTime: {
     fontSize: normalize(30),
-    alignSelf: 'center',
+    alignSelf: 'flex-start',
+  },
+  taskTitle: {
+    fontWeight: "bold"
   }
 })
 
