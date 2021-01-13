@@ -1,44 +1,54 @@
-# My Universal React Project
-
-<p>
-  <!-- iOS -->
-  <a href="https://itunes.apple.com/app/apple-store/id982107779">
-    <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  </a>
-  <!-- Android -->
-  <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample">
-    <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  </a>
-  <!-- Web -->
-  <a href="https://docs.expo.io/workflow/web/">
-    <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-  </a>
+< br/>
+<h2 align="center">Never Alone</h2>
+<p align="center">
+  <a href='https://github.com/never-alone-turing'><strong>Repo Link</strong></a>
+  <br />
+  A Turing School Mod 4 Project
 </p>
 
-## 🚀 How to use
 
-- Install packages with `yarn` or `npm install`.
-  - If you have native iOS code run `npx pod-install`
-- Run `yarn start` to start the bundler.
-- Open the project in a React runtime to try it:
-  - iOS: [Client iOS](https://itunes.apple.com/app/apple-store/id982107779)
-  - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
-  - Web: Any web browser
+# About The Project
 
-## Adding Native Code
+Never Alone is an application that allows people to check in on each other. The target audience is people caring for someone who is elderly or who is living with a disability, but it could also be utilized for anyone who wants to be able to check in on a friend or family member.
 
-This project can be run from a web browser or the Expo client app. You may find that you want to add more native code later on. You can do this by ejecting the project and rebuilding it yourself.
+The aim of the application is to allow a user to quickly check in on how someone is doing, and if they have remembered a task such as taking medications, without being intrusive. Users can set times for check-ins and see if they are accomplished within a set time each day simply by checking their screen at any time.
 
-- Run `yarn eject` to create the native projects.
-- You can still run your project in the web browser or Expo client, you just won't be able to access any new native modules you add.
+This was a group project for the Turing School of Software and Design. The Front End of the project is being discussed here, and the Back End can be accessed from the repository. We were able to select a project we wished to work on from suggestions put forward by our peers. The idea for this project came from Ian Holliday, who is one of the developers for the project. Since this application seems best suited to be used from a phone or mobile device, we chose to work with React Native and Expo, which were new technologies for everyone on the team.
 
-## Publishing
+## Built with
 
-- Deploy the native app to the App store and Play store using this guide: [Deployment](https://docs.expo.io/distribution/app-stores/).
-- Deploy the website using this guide: [Web deployment](https://docs.expo.io/distribution/publishing-websites/).
+  - JavaScript
+  - React
+  - React Native
+  - Expo
+  - Babel
 
-## 📝 Notes
+## Installation
 
-- Learn more about [Universal React](https://docs.expo.io/).
-- See what API and components are [available in the React runtimes](https://docs.expo.io/versions/latest/).
-- Find out more about developing apps and websites: [Guides](https://docs.expo.io/guides/).
+In your terminal:
+
+1. Clone the repo: `git clone https://github.com/never-alone-turing/FE.git`
+2. Install NPM packages: `npm install`
+3. If you are using Expo: `expo start` to open whichever simulator you prefer, or run `npm start` to open in your browser.
+
+If you are using the Expo app, a QR code will display, that can be scanned to open the app on your phone.
+
+If you are using an Android simulator, you will need to have Android Studio downloaded on your computer. If you are using a MAC, you will need to have XCode downloaded to use the Iphone simulator
+
+
+## Challenges
+
+Although we were familiar with React and CSS, React Native was a new technology, and using Expo meant that we were not using the dev tools that we were accustomed to, so there was a bit of a learning curve, but it was not too difficult to work in the new framework.
+Members of the team were in three different time zones, so two of the members needed to make accommodations to work with the rest of the team.
+
+## Successes
+
+Working on a project that we chose, rather than one that was assigned was definitely a positive experience.
+
+## Contact
+
+[Ian Holladay - Developer](https://github.com/holladayian)
+
+[Kathryn Jackson - Developer](https://github.com/kathrynljackson)
+
+[Naomi Ware - Developer](https://github.com/nware1066)
