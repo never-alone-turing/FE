@@ -80,11 +80,15 @@ As the care receiver, the user can view their tasks for the day and mark them as
    * Each member of the team lives in a different time zone, so we learned how to be flexible and considerate in terms of scheduling.
 * Learning more about how styling affects accessibility
    * In order to build an accessible app, we had to consider cognition, physical differences, independence, and motor skills while building out functionality and determining the user experience. 
+* Deployment and Continuous Integration
+   * At the beginning of our process, we learned that there would be certain challenges when it came to deploying the app. As a team, we decided to prioritize other goals that could be met realistically given our time frame.  
 
 
 ## Moving Forward
 
 While we as a team are satisfied with the MVP we produced for this assignment, we have discussed continuing our progress in the future. Potential changes include the following extentions:
+* deploying the application to app stores
+* increasing accessibility (i.e. adding accessibility labels, considering screenreaders and other tools)
 * further styling to account for text length
 * creating accounts so that multiple families and groups can use Never Alone
 * the ability to send a link to the receiver that automatically logs them into the app
