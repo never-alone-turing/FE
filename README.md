@@ -1,4 +1,3 @@
-< br/>
 <h2 align="center">Never Alone</h2>
 <p align="center">
   <a href='https://github.com/never-alone-turing'><strong>Repo Link</strong></a>
@@ -20,13 +19,6 @@ The aim of the application is to allow a user to quickly check in on how someone
 
 This was a group project for the Turing School of Software and Design. The Front End of the project is being discussed here, and the Back End can be accessed from the repository. We were able to select a project we wished to work on from suggestions put forward by our peers. The idea for this project came from Ian Holliday, who is one of the developers for the project. Since this application seems best suited to be used from a phone or mobile device, we chose to work with React Native and Expo, which were new technologies for everyone on the team.
 
-## Endpoint
-With this project, we utilized GraphQL and in such, only needed to utilize one end point.
-
-`"https://never-alone-backend.herokuapp.com/graphql"`
-
-Our backend team set up their own server and provided thus provided us with this endpoint. If you would like to checkout the backend repo you can check it out [here!](https://github.com/never-alone-turing/never_alone_be)
-
 ## Built with
 
   - JavaScript
@@ -37,13 +29,6 @@ Our backend team set up their own server and provided thus provided us with this
 
 ## Installation
 
-It should be noted that to run this project locally you will need to install the [xcode cli](https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d)
-
-* note: this was difficult for us when we were getting started. Because React-Native is a newer technology, it seems that there is less documentation around trouble shooting. 
-
-After installing the xcode cli you will need to download an immulator; [Android](https://developer.android.com/studio) [iOS](https://developer.apple.com/xcode/)
-Or you can use the Expo app on your phone <= Recommended 
-
 In your terminal:
 
 1. Clone the repo: `git clone https://github.com/never-alone-turing/FE.git`
@@ -52,13 +37,27 @@ In your terminal:
 
 If you are using the Expo app, a QR code will display, that can be scanned to open the app on your phone.
 
-If you are using an Android simulator, you will need to have Android Studio downloaded on your computer. If you are using a MAC, you will need to have XCode downloaded to use the Iphone simulator
+If you are using an Android simulator, you will need to have Android Studio downloaded on your computer. If you are using a MAC, you will need to have XCode downloaded to use the Iphone simulator.
+
+## Using The App
+
+The landing page of this app allows the user to choose their role as either the caretaker or the care receiver. 
+
+![Screen Shot 2021-01-14 at 1 42 14 PM](https://user-images.githubusercontent.com/65988644/104634197-50fbc280-566e-11eb-93dc-c66e2afdfb05.png)
+
+As caretaker, the user has the ability to add, remove, and view tasks that the user should complete throughout that day. The status of each task reflects whether or not that task has been completed by the care receiver.
+
+![Screen Shot 2021-01-14 at 1 48 49 PM](https://user-images.githubusercontent.com/65988644/104634913-3c6bfa00-566f-11eb-92b9-f336cb8a62b5.png) ![Screen Shot 2021-01-14 at 1 51 33 PM](https://user-images.githubusercontent.com/65988644/104635235-9e2c6400-566f-11eb-82f9-3d89f42d657b.png)
+
+As the care receiver, the user can view their tasks for the day and mark them as complete by holding down the button. This mode of communication allows the caretaker to guide the receiver without any loss of autonomy. 
+
+![Screen Shot 2021-01-14 at 1 56 04 PM](https://user-images.githubusercontent.com/65988644/104635669-404c4c00-5670-11eb-81d6-f1e802cdd5ba.png) ![Screen Shot 2021-01-14 at 1 56 23 PM](https://user-images.githubusercontent.com/65988644/104635711-4b06e100-5670-11eb-95b4-3ba3a22803af.png)
 
 
 ## Challenges
 
-Although we were familiar with React and CSS, React Native was a new technology, and using Expo meant that we were not using the dev tools that we were accustomed to, so there was a bit of a learning curve, but it was not too difficult to work in the new framework.
-Members of the team were in three different time zones, so two of the members needed to make accommodations to work with the rest of the team.
+* Although we were familiar with React and CSS, React Native was a new technology, and using Expo meant that we were not using the dev tools that we were accustomed to, so there was a bit of a learning curve, but it was not too difficult to work in the new framework.
+* Members of the team were in three different time zones, so two of the members needed to make accommodations to work with the rest of the team.
 
 ## Successes
 
@@ -71,12 +70,6 @@ Working on a project that we chose, rather than one that was assigned was defini
 [Kathryn Jackson - Developer](https://github.com/kathrynljackson)
 
 [Naomi Ware - Developer](https://github.com/nware1066)
-
-### Our Backend Team!!
-
-- [Saryn Mooney](https://github.com/sarynm12)
-- [Daniel Lessenden](https://github.com/D-Lessenden)
-- [Nico Rithner](https://github.com/nicorithner)
 
 [contributors-shield]: https://img.shields.io/github/contributors/never-alone-turing/FE.svg?style=flat-square
 [contributors-url]: https://github.com/holladayian/never-alone-turing/FE
