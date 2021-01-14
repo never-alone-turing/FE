@@ -20,6 +20,13 @@ The aim of the application is to allow a user to quickly check in on how someone
 
 This was a group project for the Turing School of Software and Design. The Front End of the project is being discussed here, and the Back End can be accessed from the repository. We were able to select a project we wished to work on from suggestions put forward by our peers. The idea for this project came from Ian Holliday, who is one of the developers for the project. Since this application seems best suited to be used from a phone or mobile device, we chose to work with React Native and Expo, which were new technologies for everyone on the team.
 
+## Endpoint
+With this project, we utilized GraphQL and in such, only needed to utilize one end point.
+
+`"https://never-alone-backend.herokuapp.com/graphql"`
+
+Our backend team set up their own server and provided thus provided us with this endpoint. If you would like to checkout the backend repo you can check it out [here!](https://github.com/never-alone-turing/never_alone_be)
+
 ## Built with
 
   - JavaScript
@@ -29,6 +36,13 @@ This was a group project for the Turing School of Software and Design. The Front
   - Babel
 
 ## Installation
+
+It should be noted that to run this project locally you will need to install the [xcode cli](https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d)
+
+* note: this was difficult for us when we were getting started. Because React-Native is a newer technology, it seems that there is less documentation around trouble shooting. 
+
+After installing the xcode cli you will need to download an immulator; [Android](https://developer.android.com/studio) [iOS](https://developer.apple.com/xcode/)
+Or you can use the Expo app on your phone <= Recommended 
 
 In your terminal:
 
@@ -57,6 +71,12 @@ Working on a project that we chose, rather than one that was assigned was defini
 [Kathryn Jackson - Developer](https://github.com/kathrynljackson)
 
 [Naomi Ware - Developer](https://github.com/nware1066)
+
+### Our Backend Team!!
+
+- [Saryn Mooney](https://github.com/sarynm12)
+- [Daniel Lessenden](https://github.com/D-Lessenden)
+- [Nico Rithner](https://github.com/nicorithner)
 
 [contributors-shield]: https://img.shields.io/github/contributors/never-alone-turing/FE.svg?style=flat-square
 [contributors-url]: https://github.com/holladayian/never-alone-turing/FE
