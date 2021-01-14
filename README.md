@@ -29,6 +29,13 @@ This was a group project for the Turing School of Software and Design. The Front
 
 ## Installation
 
+It should be noted that to run this project locally you will need to install the [xcode cli](https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d)
+
+* note: this was difficult for us when we were getting started. Because React-Native is a newer technology, it seems that there is less documentation around trouble shooting. 
+
+After installing the xcode cli you will need to download an immulator; [Android](https://developer.android.com/studio) [iOS](https://developer.apple.com/xcode/)
+Or you can use the Expo app on your phone <= Recommended 
+
 In your terminal:
 
 1. Clone the repo: `git clone https://github.com/never-alone-turing/FE.git`
