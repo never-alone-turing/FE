@@ -63,6 +63,13 @@ As the care receiver, the user can view their tasks for the day and mark them as
 
 Working on a project that we chose, rather than one that was assigned was definitely a positive experience.
 
+## Moving Forward
+
+While we as a team are satisfied with the MVP we produced for this assignment, we have discussed continuing our progress in the future. Potential changes include the following extentions:
+* further styling to account for text length
+* creating accounts so that multiple families and groups can use Never Alone
+* the ability to send a link to the receiver that automatically logs them into the app
+
 ## Contact
 
 [Ian Holladay - Developer](https://github.com/holladayian)
