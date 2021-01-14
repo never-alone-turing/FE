@@ -17,7 +17,7 @@ Never Alone is an application that allows people to check in on each other. The 
 
 The aim of the application is to allow a user to quickly check in on how someone is doing, and if they have remembered a task such as taking medications, without being intrusive. Users can set times for check-ins and see if they are accomplished within a set time each day simply by checking their screen at any time.
 
-This was a group project for the Turing School of Software and Design. The Front End of the project is being discussed here, and the Back End can be accessed from the repository. We were able to select a project we wished to work on from suggestions put forward by our peers. The idea for this project came from Ian Holliday, who is one of the developers for the project. Since this application seems best suited to be used from a phone or mobile device, we chose to work with React Native and Expo, which were new technologies for everyone on the team.
+This was a group project for the Turing School of Software and Design. The Front End of the project is being discussed here, while more insight into the backend experience can be seen on [the separate repository](https://github.com/never-alone-turing/never_alone_be). We were able to select a project we wished to work on from suggestions put forward by our peers. The idea for this project came from Ian Holliday, who is one of the developers for the project. Since this application seems best suited to be used from a phone or mobile device, we chose to work with React Native and Expo, which were new technologies for everyone on the team.
 
 ## Built with
 
