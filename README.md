@@ -54,14 +54,19 @@ As the care receiver, the user can view their tasks for the day and mark them as
 ![Screen Shot 2021-01-14 at 1 56 04 PM](https://user-images.githubusercontent.com/65988644/104635669-404c4c00-5670-11eb-81d6-f1e802cdd5ba.png) ![Screen Shot 2021-01-14 at 1 56 23 PM](https://user-images.githubusercontent.com/65988644/104635711-4b06e100-5670-11eb-95b4-3ba3a22803af.png)
 
 
-## Challenges
 
-* Although we were familiar with React and CSS, React Native was a new technology, and using Expo meant that we were not using the dev tools that we were accustomed to, so there was a bit of a learning curve, but it was not too difficult to work in the new framework.
-* Members of the team were in three different time zones, so two of the members needed to make accommodations to work with the rest of the team.
+## Successes and Challenges
 
-## Successes
+* Creating an app based on a student idea
+   * Most of our projects have very specific learning goals and end product expectations. This assignment required us to set goals on our own, and allowed us to experience the entire process of creating an app.
+* Learning a new framework
+   * While React is part of the Turing curriculum, no one on the team had used ReactNative before. Learning this new technology and using expo was a difficult process.
+   * Using a new framework meant that we were unable to utilize the dev tools that we have grown accustomed to. 
+* Increased understanding of asynchronous git workflow
+   * Each member of the team lives in a different time zone, so we learned how to be flexible and considerate in terms of scheduling.
+* Learning more about how styling affects accessibility
+   * In order to build an accessible app, we had to consider cognition, physical differences, independence, and motor skills while building out functionality and determining the user experience. 
 
-Working on a project that we chose, rather than one that was assigned was definitely a positive experience.
 
 ## Moving Forward
 
